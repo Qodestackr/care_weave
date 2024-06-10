@@ -4,7 +4,6 @@ import { PanelsTopLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useStore } from "@/hooks/use-store";
 import { Button } from "@/components/ui/button";
-import { Menu } from "./menu";
 import { useSidebarToggle } from "@/hooks/use-sidebar-toggle";
 
 import { ChevronLeft } from "lucide-react";
@@ -69,7 +68,6 @@ export function SidebarOne() {
                         </h1>
                     </Link>
                 </Button>
-                <Menu isOpen={sidebar?.isOpen} />
             </div>
         </aside>
     );
