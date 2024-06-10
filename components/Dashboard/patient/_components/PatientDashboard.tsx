@@ -43,7 +43,7 @@ export default async function PatientDashboard({ searchParams }: paramsProps) {
   const employee: Patient[] = employeeRes.users;
 
   return (
-    <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
+    <ScrollArea className='w-2/3 mt-14 mx-auto h-[90vh]'>
       <PatientCTACards />
 
       {/* <div className="flex-1 space-y-4  p-4 md:p-8 pt-6">
