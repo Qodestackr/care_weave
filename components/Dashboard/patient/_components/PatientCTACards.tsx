@@ -41,7 +41,8 @@ export default function PatientCTACards() {
                     </div>
                     <div className="col-span-1">
                         <Link href={'/dashboard/pharmacy'}>
-                            <div className="bg-blue-700 rounded-lg shadow-lg p-6 flex justify-between items-center gap-2">
+                            <div className="bg-blue-700 rounded-lg shadow-lg p-6 flex justify-start items-center gap-2">
+                                <PillBottleIcon className='w-10 h-8 text-gray-50' />
                                 <h3 className="text-lg text-white font-semibold mb-2">Pharmacy</h3>
                             </div>
                         </Link>
@@ -74,7 +75,7 @@ export default function PatientCTACards() {
                     <div className="col-span-1">
                         <Link href={'/dashboard/vaccination'}>
                             <div className="bg-slate-700 rounded-lg shadow-lg p-6 flex justify-start items-center gap-2">
-                                <User className='w-10 h-8 text-gray-50' />
+                                <VoteIcon className='w-10 h-8 text-gray-50' />
                                 <h3 className="text-lg text-white font-semibold mb-2">Vaccination</h3>
                             </div>
                         </Link>
@@ -94,5 +95,47 @@ export default function PatientCTACards() {
                 <TabPatientRecentUpdates />
             </TabsContent>
         </Tabs>
+    )
+}
+
+function VoteIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="m9 12 2 2 4-4" />
+            <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z" />
+            <path d="M22 19H2" />
+        </svg>
+    )
+}
+
+function PillBottleIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M18 11h-4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h4" />
+            <path d="M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7" />
+            <rect width="16" height="5" x="4" y="2" rx="1" />
+        </svg>
     )
 }

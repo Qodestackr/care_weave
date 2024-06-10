@@ -11,6 +11,9 @@ import {
   Section,
   Text,
 } from "@react-email/components";
+
+import { render } from '@react-email/render';
+
 interface EmailTemplateProps {
   firstName?: string;
   token: number;

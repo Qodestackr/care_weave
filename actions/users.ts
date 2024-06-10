@@ -8,7 +8,7 @@ import bcrypt from "bcrypt";
 import { Resend } from "resend";
 
 export async function createUser(formData: RegisterInputProps) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend("re_HAJotZGC_7TGsLNZJLEtpAybVQqAUadMZ");
   const { fullName, email, role, phone, password, plan } = formData;
   try {
     const existingUser = await prismaClient.user.findUnique({

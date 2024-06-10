@@ -21,14 +21,14 @@ export function MobileNav() {
     //   name: "Home",
     //   path: "/",
     // },
-    {
-      name: "Find Doctor",
-      path: "/find-doctor",
-    },
-    {
-      name: "Telehealth Visit",
-      path: "/telehealth",
-    },
+    // {
+    //   name: "Find Doctor",
+    //   path: "/find-doctor",
+    // },
+    // {
+    //   name: "Telehealth Visit",
+    //   path: "/telehealth",
+    // },
     // {
     //   name: "Inperson Visit",
     //   path: "/doctors",

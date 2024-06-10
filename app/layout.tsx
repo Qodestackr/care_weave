@@ -4,13 +4,14 @@ import "./globals.css";
 import Providers from "@/components/Providers";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
+
+
 const inter = Inter({ subsets: ["latin"] });
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { OnboardingContextProvider } from "@/context/context";
 import StreamVideoProvider from '@/context/StreamClientProvider';
-
 
 import { SessionProvider } from 'next-auth/react';
 import { getServerSession } from "next-auth";
@@ -81,10 +82,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const session = await getServerSession();
-
-
   return (
     <html lang="en" suppressHydrationWarning>
 
@@ -106,8 +104,6 @@ export default async function RootLayout({
           </OnboardingContextProvider>
         </Providers>
       </body>
-
     </html>
   );
-
 }

@@ -11,14 +11,14 @@ export const docsConfig: DocsConfig = {
     //   title: "Home",
     //   href: "/",
     // },
-    {
-      title: "Find Doctor",
-      href: "/find-doctor",
-    },
-    {
-      title: "Telehealth Visit",
-      href: "/telehealth",
-    },
+    // {
+    //   title: "Find Doctor",
+    //   href: "/find-doctor",
+    // },
+    // {
+    //   title: "Telehealth Visit",
+    //   href: "/telehealth",
+    // },
     // {
     //   title: "Inperson Visit",
     //   href: "/doctors",
@@ -27,10 +27,10 @@ export const docsConfig: DocsConfig = {
     //   title: "About",
     //   href: "/about",
     // },
-    {
-      title: "Be service provider",
-      href: "/register?role=DOCTOR&plan=free",
-    },
+    // {
+    //   title: "Be service provider",
+    //   href: "/register?role=DOCTOR&plan=free",
+    // },
   ],
   sidebarNav: [
     {

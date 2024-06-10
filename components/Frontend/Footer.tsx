@@ -97,43 +97,24 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-gray-500 bg-white dark:bg-slate-950 px-4 py-5 max-w-screen-xl mx-auto md:px-8">
-      <div className="gap-6 justify-between md:flex">
-        {/* <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
-          {footerNavs.map((item, idx) => (
-            <ul className="space-y-4" key={idx}>
-              <h4 className="text-gray-800 dark:text-gray-300 font-medium">
-                {item.label}
-              </h4>
-              {item.items.map((el, idx) => (
-                <li key={idx}>
-                  <a
-                    href={el.href}
-                    className="hover:underline hover:text-indigo-600"
-                  >
-                    {el.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div> */}
-      </div>
-      <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
+    <footer className="text-gray-500 bg-white dark:bg-slate-950 px-4 max-w-screen-xl mx-auto md:px-8">
+      <div className="mt-4 py-4 border-t items-center justify-between sm:flex">
+
         <div className="mt-4 sm:mt-0">
           &copy; {new Date().getFullYear()} AfyaTelemed All rights reserved.
         </div>
-        <div className="mt-6 sm:mt-0">
+
+        <div className="mt-3 sm:mt-0">
           <ul className="flex items-center space-x-4">
             {socialLinks.map((item, i) => {
               const Icon = item.icon;
               return (
                 <li
                   key={i}
-                  className="w-10 h-10 border rounded-full flex items-center justify-center"
+                  className="w-8 h-8 border rounded-full flex items-center justify-center"
                 >
                   <a href={item.href} className={item.color}>
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-5 h-5" />
                   </a>
                 </li>
               );
