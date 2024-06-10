@@ -46,7 +46,7 @@ export default async function PatientDashboard({ searchParams }: paramsProps) {
     <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
       <PatientCTACards />
 
-      <div className="flex-1 space-y-4  p-4 md:p-8 pt-6">
+      {/* <div className="flex-1 space-y-4  p-4 md:p-8 pt-6">
 
         <div className="flex items-start justify-between">
           <Heading
@@ -63,13 +63,13 @@ export default async function PatientDashboard({ searchParams }: paramsProps) {
           </Link>
         </div>
         <Separator />
-      </div>
+      </div> */}
 
-      <ReferPatientComboboxDropdownMenu />
-      <ERxDetails />
-      <LabResults />
+      {/* <ReferPatientComboboxDropdownMenu /> */}
+      {/* <ERxDetails /> */}
+      {/* <LabResults /> */}
       {/*  */}
-      <DoctorPatientDetailedProfile />
+      {/* <DoctorPatientDetailedProfile /> */}
       {/*  */}
     </ScrollArea>
   );
