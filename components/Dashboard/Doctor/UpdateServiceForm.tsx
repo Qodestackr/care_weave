@@ -23,17 +23,6 @@ export default function UpdateServiceForm({
   symptoms: Symptom[] | null;
   profile: DoctorProfile | undefined | null;
 }) {
-  // const { data: session, status } = useSession();
-  console.log(profile);
-  const profileId = profile?.id;
-  if (status === "loading") {
-    return (
-      <div className="flex items-center ">
-        <Loader className="mr-1 w-4 h-4 animate-spin" />
-        <span>Loading a User...</span>
-      </div>
-    );
-  }
   // const user = session?.user;
   const [selectedServiceId, setSelectedServiceId] = useState(
     profile?.serviceId
@@ -50,6 +39,21 @@ export default function UpdateServiceForm({
   const [savingSymptoms, setSavingSymptoms] = useState(false);
   const [savingMode, setSavingMode] = useState(false);
   console.log(price);
+
+
+
+  // const { data: session, status } = useSession();
+  console.log(profile);
+  const profileId = profile?.id;
+  if (status === "loading") {
+    return (
+      <div className="flex items-center ">
+        <Loader className="mr-1 w-4 h-4 animate-spin" />
+        <span>Loading a User...</span>
+      </div>
+    );
+  }
+
   const operationModes = [
     {
       title: "Telehealth visit",
@@ -180,10 +184,11 @@ export default function UpdateServiceForm({
           </div>
           <div className="grid grid-cols-4 gap-2 py-3">
             {operationModes &&
-              operationModes.map((item) => {
+              operationModes.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <button
+                    key={index}
                     onClick={() => setOperationMode(item.title)}
                     className={cn(
                       "border flex items-center justify-center flex-col py-2 px-3 rounded-md cursor-pointer",
@@ -210,9 +215,10 @@ export default function UpdateServiceForm({
           </div>
           <div className="grid grid-cols-4 gap-2 py-3">
             {services &&
-              services.map((item) => {
+              services.map((item, index) => {
                 return (
                   <button
+                    key={index}
                     onClick={() => setSelectedServiceId(item.id)}
                     className={cn(
                       "border flex items-center justify-center flex-col py-2 px-3 rounded-md cursor-pointer",
@@ -246,9 +252,10 @@ export default function UpdateServiceForm({
           </div>
           <div className="grid grid-cols-4 gap-2 py-3">
             {specialties &&
-              specialties.map((item) => {
+              specialties.map((item, index) => {
                 return (
                   <button
+                    key={index}
                     onClick={() => setSpecialtyId(item.id)}
                     className={cn(
                       "border flex items-center justify-center flex-col py-3 px-3 rounded-md cursor-pointer",
@@ -274,9 +281,10 @@ export default function UpdateServiceForm({
           </div>
           <div className="grid grid-cols-4 gap-2 py-3">
             {symptoms &&
-              symptoms.map((item) => {
+              symptoms.map((item, index) => {
                 return (
                   <button
+                    key={index}
                     onClick={() => setSymptomIds([...symptomIds, item.id])}
                     className={cn(
                       "border flex items-center justify-center flex-col py-3 px-3 rounded-md cursor-pointer",

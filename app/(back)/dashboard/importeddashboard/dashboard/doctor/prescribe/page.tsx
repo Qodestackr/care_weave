@@ -231,8 +231,7 @@ export function PrescribeForm() {
     )
 }
 
-
-export default function prescribe() {
+export default function Prescribe() {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedMedication, setSelectedMedication] = useState(null);
     const [medications, setMedications] = useState([]); // Replace with API call or data source

@@ -5,7 +5,7 @@ import SpecialtyForm from "@/components/Dashboard/SpecialtyForm";
 import SymptomForm from "@/components/Dashboard/SymptomForm";
 import React from "react";
 
-export default async function page({
+export default async function Page({
   params: { slug },
 }: {
   params: { slug: string };

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function page() {
+export default function Page() {
   const features = [
     "Medic brings patients to you",
     "Seamless e-prescribing experience",

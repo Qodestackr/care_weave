@@ -2,7 +2,7 @@ import { getSpecialties } from "@/actions/specialities";
 import OnboardingSteps from "@/components/pharmacy/Onboarding/OnboardingSteps";
 import React from "react";
 
-export default async function page({
+export default async function Page({
   params: { id },
 }: {
   params: { id: string };

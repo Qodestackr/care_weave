@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
 
-export default async function page({
+export default async function Page({
   params: { id },
 }: {
   params: { id: string };

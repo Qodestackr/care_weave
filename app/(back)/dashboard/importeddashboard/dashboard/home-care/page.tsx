@@ -1,7 +1,7 @@
 import { UnderConstruction } from '@/imported/components/site-status'
 import React from 'react'
 
-export default function page() {
+export default function Page() {
     return (
         <div>
             <h2 className='text-xl font-semibold text-center text-blue-400'>

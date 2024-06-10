@@ -16,7 +16,7 @@ const categories = [
 ];
 
 // https://dribbble.com/shots/23176626-Medical-Lab-Testing-Booking-Landing-Page
-export default function page() {
+export default function Page() {
     const sampleTestRequest = {
         id: 1,
         doctorName: 'Dr. Smith',

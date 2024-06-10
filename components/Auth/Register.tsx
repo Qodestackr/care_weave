@@ -131,7 +131,8 @@ export default function RegisterWithBg({
                   <RadioButtoProvider
                     id="PrivateDocPractitioner"
                     name="Private Practitioner"
-                    description="Doctor Private Practitioner." selected={undefined}
+                    description="Doctor Private Practitioner."
+                    //selected={undefined}
                     selected={providerType === "privatePractitioner"}
                     onChange={handleProviderTypeChange}
                   />
@@ -141,7 +142,8 @@ export default function RegisterWithBg({
                   <RadioButtoProvider
                     id="Pharmacy"
                     name="Pharmacy"
-                    description="Register as a Pharmacy Facility" selected={undefined}
+                    description="Register as a Pharmacy Facility"
+                    //selected={undefined}
                     selected={providerType === "pharmacy"}
                     onChange={handleProviderTypeChange}
                   />
@@ -151,7 +153,8 @@ export default function RegisterWithBg({
                   <RadioButtoProvider
                     id="Lab"
                     name="Lab"
-                    description="Register as a Lab Facility" selected={undefined}
+                    description="Register as a Lab Facility"
+                    //selected={undefined}
                     selected={providerType === "lab"}
                     onChange={handleProviderTypeChange}
                   />
@@ -161,7 +164,8 @@ export default function RegisterWithBg({
                   <RadioButtoProvider
                     id="Hospital"
                     name="Hospital"
-                    description="Register as a Hospital Facility" selected={undefined}
+                    description="Register as a Hospital Facility"
+                    //selected={undefined}
                     selected={providerType === "hospital"}
                     onChange={handleProviderTypeChange}
                   />

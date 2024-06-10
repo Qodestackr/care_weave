@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { History } from 'lucide-react';
 
 
-export default async function page(/**{ session }: { session: Session | null } */) {
+export default async function Page(/**{ session }: { session: Session | null } */) {
     const session = await getServerSession(authOptions);
 
     console.log(session, '....?')

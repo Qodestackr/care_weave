@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { getAppointmentById } from "@/actions/appointments";
 
-export default async function page({ params: { id } }: { params: { id: string } }) {
+export default async function Page({ params: { id } }: { params: { id: string } }) {
 
   const appointment = await getAppointmentById(id);
 

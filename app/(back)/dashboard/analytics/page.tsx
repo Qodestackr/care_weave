@@ -89,7 +89,7 @@ export default function Analytics() {
 
       <div className="mt-4">
         {tabs.map((tab, index) => (
-          <div className="w-full overflow-hidden relative h-full rounded-2xl p-4 text-white bg-gradient-to-br from-slate-700 to-slate-900 mb-4">
+          <div key={index} className="w-full overflow-hidden relative h-full rounded-2xl p-4 text-white bg-gradient-to-br from-slate-700 to-slate-900 mb-4">
             <h2 className="font-light mb-2">{tab?.content}</h2>
 
           </div>

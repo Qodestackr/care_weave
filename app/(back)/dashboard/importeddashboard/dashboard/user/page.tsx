@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react"
 
 
 const breadcrumbItems = [{ title: "User", link: "/dashboard/user" }];
-export default function page() {
+export default function Page() {
   const { data: session, update } = useSession()
 
   console.log(session, 'user dashboard sessioni..')

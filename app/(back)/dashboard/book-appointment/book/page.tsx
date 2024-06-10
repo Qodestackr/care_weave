@@ -7,8 +7,7 @@ import { ConsultationPaymentDetails } from "../payment/page";
 import { ScrollArea } from '@/components/ui/scroll-area';
 import ExternalCalForState from "./ExternalCalForState";
 
-
-export default function page() {
+export default function BookPage() {
     const router = useRouter();
 
     const doctor = {
@@ -43,7 +42,7 @@ export default function page() {
             })
 
         })();
-    }, [/**router*/])
+    }, [router])
     return (
         <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
             <ConsultationPaymentDetails doctor={doctor} appointment={appointment} />

@@ -3,7 +3,7 @@ import RegisterWithBg from "@/components/Auth/Register";
 import RegisterForm from "@/components/Auth/RegisterForm";
 import React from "react";
 
-export default function page({
+export default function Register({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };

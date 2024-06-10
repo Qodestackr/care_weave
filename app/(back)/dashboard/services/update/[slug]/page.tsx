@@ -2,7 +2,7 @@ import { getServiceBySlug } from "@/actions/services";
 import ServiceForm from "@/components/Dashboard/ServiceForm";
 import React from "react";
 
-export default async function page({
+export default async function Page({
   params: { slug },
 }: {
   params: { slug: string };

@@ -9,7 +9,7 @@ import DoctorServiceSettings from "@/components/Dashboard/Doctor/DoctorServiceSe
 import { ScrollArea } from "@/components/ui/scroll-area";
 // import { Tabs } from "flowbite-react";
 
-export default async function page() {
+export default async function Page() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
   console.log(user);

@@ -6,7 +6,7 @@ import PanelHeader from "@/components/Dashboard/Doctor/PanelHeader";
 import { Calendar } from "lucide-react";
 import React from "react";
 
-export default async function page() {
+export default async function Page() {
   const appointments = (await getAppointments()).data || [];
   return (
     <div>

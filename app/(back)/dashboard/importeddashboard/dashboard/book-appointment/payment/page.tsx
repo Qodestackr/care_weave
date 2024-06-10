@@ -22,7 +22,7 @@ const appointment = {
     reason: 'Follow-up for heart condition',
 };
 
-export default function page() {
+export default function PaymentPage() {
     const [success, setSuccess] = useState(false)
 
 

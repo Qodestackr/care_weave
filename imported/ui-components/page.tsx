@@ -90,7 +90,7 @@ const UpcomingScheduleDetails = ({ appointment }: any) => {
 };
 
 
-export default function page() {
+export default function Page() {
     return (
         <div className='bg-white'>
 

@@ -13,7 +13,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Activity, Anvil, Calendar, LayoutGrid } from "lucide-react";
 import React from "react";
 
-export default async function page() {
+export default async function Page() {
   const symptoms = (await getSymptoms()).data || [];
   return (
     <div>

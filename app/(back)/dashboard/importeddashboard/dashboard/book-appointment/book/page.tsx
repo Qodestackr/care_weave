@@ -8,7 +8,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import ExternalCalForState from "./ExternalCalForState";
 
 
-export default function page() {
+export default function Page() {
     const router = useRouter();
 
     const doctor = {

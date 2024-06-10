@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/card'
 import React from 'react'
 
-export default function page() {
+export default function Vaccination() {
     return (
         <Card className='mt-20 p-4'>
             <span>
