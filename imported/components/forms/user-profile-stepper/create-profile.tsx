@@ -24,7 +24,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { profileSchema, type ProfileFormValues } from "@/lib/form-schema";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertTriangleIcon, Trash, Trash2Icon } from "lucide-react";
@@ -70,8 +69,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
     ],
   };
 
-  const form = useForm<ProfileFormValues>({
-    resolver: zodResolver(profileSchema),
+  const form = useForm<any>({
     defaultValues,
     mode: "onChange",
   });
@@ -86,7 +84,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
     name: "jobs",
   });
 
-  const onSubmit = async (data: ProfileFormValues) => {
+  const onSubmit = async (data: any) => {
     try {
       setLoading(true);
       if (initialData) {
@@ -116,14 +114,13 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
     }
   };
 
-  const processForm: SubmitHandler<ProfileFormValues> = (data) => {
+  const processForm: SubmitHandler<any> = (data) => {
     console.log("data ==>", data);
     setData(data);
     // api call and reset
     // form.reset();
   };
 
-  type FieldName = keyof ProfileFormValues;
 
   const steps = [
     {
@@ -160,7 +157,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
   const next = async () => {
     const fields = steps[currentStep].fields;
 
-    const output = await form.trigger(fields as FieldName[], {
+    const output = await form.trigger(fields, {
       shouldFocus: true,
     });
 
@@ -429,8 +426,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
                     <AccordionItem value="item-1">
                       <AccordionTrigger
                         className={cn(
-                          "[&[data-state=closed]>button]:hidden [&[data-state=open]>.alert]:hidden relative !no-underline",
-                          errors?.jobs?.[index] && "text-red-700",
+                          "[&[data-state=closed]>button]:hidden [&[data-state=open]>.alert]:hidden relative !no-underline"
                         )}
                       >
                         {`Add Staff and Doctors`}
@@ -444,11 +440,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
                         >
                           <Trash2Icon className="h-4 w-4 " />
                         </Button>
-                        {errors?.jobs?.[index] && (
-                          <span className="absolute alert right-8">
-                            <AlertTriangleIcon className="h-4 w-4   text-red-700" />
-                          </span>
-                        )}
+
                       </AccordionTrigger>
                       <AccordionContent>
                         <div

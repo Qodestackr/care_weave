@@ -1,6 +1,5 @@
 'use client';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { ClinicalMedicalSummary } from '@/components/doctor/clinical-summary';
 import AppStream from '../A';
 
 const Meet: React.FunctionComponent = () => {
@@ -13,7 +12,7 @@ const Meet: React.FunctionComponent = () => {
                 >
                     {/* <AppStream /> */}
                     <div className="w-1/3">
-                        <ClinicalMedicalSummary />
+                        MEANT TO BE A MEET?
                     </div>
                 </div>
             </main>
