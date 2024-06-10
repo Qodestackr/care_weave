@@ -155,7 +155,7 @@ export default async function DashboardMain() {
                   <Link href={'/dashboard/doctor'}>
                     <div className="bg-blue-300 rounded-lg shadow-lg p-6 flex justify-start items-center gap-2">
                       <Stethoscope className='w-10 h-8 text-gray-50' />
-                      <h3 className="text-lg text-white font-semibold mb-2">Doctor Consultation</h3>
+                      <h3 className="text-lg text-white font-semibold mb-2">Consult a Doctor(G.P)</h3>
                     </div>
                   </Link>
                 </div>
@@ -177,7 +177,7 @@ export default async function DashboardMain() {
                 <div className="col-span-1">
                   <Link href={'/dashboard/doctor'}>
                     <div className="bg-blue-400 rounded-lg shadow-lg p-6 flex justify-start items-center gap-2">
-                      <h3 className="text-lg text-white font-semibold mb-2">Consultants</h3>
+                      <h3 className="text-md text-white font-semibold mb-2">Consult a Specialist</h3>
                     </div>
                   </Link>
                 </div>

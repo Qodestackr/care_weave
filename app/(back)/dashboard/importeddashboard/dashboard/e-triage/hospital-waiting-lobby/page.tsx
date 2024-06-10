@@ -14,7 +14,6 @@ import { ArrowLeft, ArrowRight, CircleOff, MicOff, Repeat, VideoOff } from 'luci
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/imported/components/ui/scroll-area';
 
-
 export default function HospitalWaitingLobby() {
     const [isDoctor, setIsDoctor] = useState(false);
     const [micActive, setMicActive] = useState(false);
@@ -28,7 +27,6 @@ export default function HospitalWaitingLobby() {
         { name: "David Otieno", checkIn: "9:12", time: "12:30 PM", waitTime: "30 mins", status: 'left' },
         { name: "David Otieno", checkIn: "8:45", time: "12:30 PM", waitTime: "30 mins", status: 'no-show' },
     ];
-
 
     return (
 
