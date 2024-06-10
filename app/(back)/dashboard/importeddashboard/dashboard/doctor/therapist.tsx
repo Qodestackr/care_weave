@@ -37,7 +37,7 @@ export default function Therapist({ imgSrc, fullName, }: any) {
                     </div>
                     {/*  */}
                     <div className="flex flex-col gap-1">
-                        <p className='font-semibold text-slate-700'><span className='text-green-600'>#14</span> people are in Queue</p>
+                        <p className='font-semibold text-slate-700'><span className='text-green-600'>#14</span> in Queue</p>
                     </div>
                     {/*  */}
                 </div>
@@ -81,7 +81,7 @@ export function DoctorCardX({ imgSrc, fullName, specialties, rating, queueCount,
                     </div>
                     <div className="mt-2">
                         <p className="font-semibold text-gray-700">
-                            <span className="text-green-600">#{queueCount}</span> people are in Queue
+                            <span className="text-green-600">#{queueCount}</span> in Queue
                         </p>
                     </div>
                 </div>
@@ -152,7 +152,7 @@ export function DoctorCardY({ imgSrc, fullName, specialties, rating, queueCount,
                     </div>
                     <div className="mt-2">
                         <p className="font-semibold text-gray-700">
-                            <span className="text-green-600">#{queueCount}</span> people are in Queue
+                            <span className="text-green-600">#{queueCount}</span> in Queue
                         </p>
                     </div>
                 </div>
