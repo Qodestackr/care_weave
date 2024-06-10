@@ -1,0 +1,273 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                Int     @id @default(autoincrement())
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  sessionToken String   @unique
+  userId       Int
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  DOCTOR
+  HOSPITAL
+  LAB
+  INSURANCE
+  PHARMACY
+}
+
+enum HospitalType {
+  GENERAL
+  SPECIALTY
+  CLINIC
+}
+
+model Service {
+  id             Int             @id @default(autoincrement())
+  title          String
+  slug           String          @unique
+  imageUrl       String
+  doctorProfiles DoctorProfile[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  User           User?           @relation(fields: [userId], references: [id])
+  userId         Int?
+}
+
+model Speciality {
+  id             Int             @id @default(autoincrement())
+  title          String
+  slug           String          @unique
+  doctorProfiles DoctorProfile[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  User           User?           @relation(fields: [userId], references: [id])
+  userId         Int?
+}
+
+model Symptom {
+  id        Int      @id @default(autoincrement())
+  title     String
+  slug      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Appointment {
+  id                       Int       @id @default(autoincrement())
+  appointmentDate          DateTime?
+  appointmentFormattedDate String
+  doctorId                 Int?
+  patientId                Int?
+  charge                   Int
+  appointmentTime          String?
+  firstName                String?
+  lastName                 String?
+  gender                   String?
+  phone                    String?
+  email                    String?
+  dob                      DateTime?
+  location                 String?
+  appointmentReason        String?
+  medicalDocuments         String[]
+  occupation               String?
+  createdAt                DateTime  @default(now())
+  updatedAt                DateTime  @updatedAt
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  name            String
+  slug            String            @default("slug")
+  email           String            @unique
+  phone           String
+  emailVerified   DateTime?
+  image           String?
+  role            UserRole          @default(USER)
+  plan            String?
+  password        String
+  accounts        Account[]
+  sessions        Session[]
+  symptomIds      String[]
+  doctorProfile   DoctorProfile?
+  services        Service[]
+  specialities    Speciality[]
+  isVerified      Boolean?          @default(false)
+  token           Int
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  hospitals       Hospital[]
+  LabProfile      LabProfile[]
+  PharmacyProfile PharmacyProfile[]
+}
+
+model Availability {
+  id              Int           @id @default(autoincrement())
+  doctorProfileId Int           @unique
+  doctorProfile   DoctorProfile @relation(fields: [doctorProfileId], references: [id], onDelete: Cascade)
+  monday          String[]
+  tuesday         String[]
+  wednesday       String[]
+  thursday        String[]
+  friday          String[]
+  saturday        String[]
+  sunday          String[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model DoctorProfile {
+  id                       Int           @id @default(autoincrement())
+  userId                   Int           @unique
+  user                     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  trackingNumber           String        @unique
+  firstName                String
+  lastName                 String
+  middleName               String?
+  // dob                      DateTime?
+  nationalOrOtherId        String?
+  gender                   String
+  page                     String
+  availability             Availability?
+  profilePicture           String?
+  bio                      String?
+  medicalLicense           String?
+  medicalLicenseExpiry     DateTime?
+  yearsOfExperience        Int?
+  email                    String?
+  phone                    String?
+  country                  String?
+  // city                     String?
+  // state                    String?
+  // medicalSchool            String?
+  // graduationYear           String?
+  // primarySpecialization    String?
+  otherSpecialties         String[]
+  // boardCertificates        String[]
+  //////////////////////////////////////////////
+  hospitalName             String?
+  hospitalAddress          String?
+  hospitalContactNumber    String?
+  hospitalEmailAddress     String?
+  hospitalWebsite          String?
+  hospitalHoursOfOperation Int?
+  servicesOffered          String[]
+  insuranceAccepted        String?
+  // educationHistory         String?
+  // research                 String?
+  // accomplishments          String?
+  additionalDocs           String[]
+  //////////////////////////////////////////////
+  operationMode            String        @default("Telehealth visit")
+  hourlyWage               Int           @default(100)
+  //////////////////////////////////////////////
+  serviceId                Int?
+  service                  Service?      @relation(fields: [serviceId], references: [id])
+  specialtyId              Int?
+  specialty                Speciality?   @relation(fields: [specialtyId], references: [id])
+  symptomIds               String[]
+  createdAt                DateTime      @default(now())
+  updatedAt                DateTime?     @updatedAt
+  shifts                   Shift[]
+  hospitals                Hospital[]
+}
+
+model Shift {
+  id         Int           @id @default(autoincrement())
+  doctor     DoctorProfile @relation(fields: [doctorId], references: [id])
+  doctorId   Int
+  hospital   Hospital      @relation(fields: [hospitalId], references: [id])
+  hospitalId Int
+  date       DateTime
+  startTime  DateTime
+  endTime    DateTime
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+model Compliance {
+  id                Int      @id @default(autoincrement())
+  hospitalId        Int
+  licenseNumber     String
+  issuingAuthority  String
+  // expiryDate        DateTime
+  accreditationBody String
+  // validityPeriod    String
+  insuranceDetails  String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  hospital Hospital @relation(fields: [hospitalId], references: [id], onDelete: Cascade)
+}
+
+model Hospital {
+  id              Int           @id @default(autoincrement())
+  name            String
+  address         String
+  contactEmail    String
+  contactPhone    String
+  hospitalType    HospitalType
+  adminId         Int
+  admin           User          @relation(fields: [adminId], references: [id])
+  doctorProfileId Int
+  doctors         DoctorProfile @relation(fields: [doctorProfileId], references: [id])
+  shifts          Shift[]
+  compliance      Compliance[]
+  ///////////////////////////////////////////////
+  //TODO :: ADD BANK AND PAYMENT DETAILS LATER//
+  /////////////////////////////////////////////
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model LabProfile {
+  id           Int      @id @default(autoincrement())
+  name         String
+  address      String
+  contactEmail String
+  contactPhone String
+  adminId      Int
+  admin        User     @relation(fields: [adminId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model PharmacyProfile {
+  id           Int      @id @default(autoincrement())
+  name         String
+  address      String
+  contactEmail String
+  contactPhone String
+  adminId      Int
+  admin        User     @relation(fields: [adminId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

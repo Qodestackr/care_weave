@@ -1,0 +1,25 @@
+import React from 'react'
+
+export default function Dividers() {
+    return (
+        <div className='flex flex-col justify-center items-center flex-wrap'>
+            <svg viewBox="0 0 384 12" fill="none" aria-hidden="true" className=" top-full my-10 w-96 transition"><mask id=":r1:-a" maskUnits="userSpaceOnUse" x="48" y="0" width="269" height="4"
+                style={{
+                    maskType: 'alpha'
+                }}
+            ><path transform="rotate(180 316.656 4)" fill="#C4C4C4" d="M316.656 4h268v4h-268z"></path></mask><g filter="url(#:r1:-b)" mask="url(#:r1:-a)"><path transform="rotate(180 292.656 1)" fill="url(#:r1:-c)" d="M292.656 1h220v2h-220z"></path></g><mask id=":r1:-d" maskUnits="userSpaceOnUse" x="116" y="0" width="268" height="12"
+                style={{
+                    maskType: 'alpha'
+                }}
+            ><path transform="rotate(180 384 12)" fill="#C4C4C4" d="M384 12h268v12H384z"></path></mask><g filter="url(#:r1:-e)" mask="url(#:r1:-d)"><path transform="rotate(180 360 1)" fill="url(#:r1:-f)" d="M360 1h220v2H360z"></path></g><defs><linearGradient id=":r1:-c" x1="292.656" y1="1" x2="512.656" y2="1" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA" stop-opacity="0"></stop><stop offset=".323" stop-color="#A78BFA"></stop><stop offset=".672" stop-color="#EC4899" stop-opacity=".3"></stop><stop offset="1" stop-color="#EC4899" stop-opacity="0"></stop></linearGradient><linearGradient id=":r1:-f" x1="360" y1="1" x2="580" y2="1" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA" stop-opacity="0"></stop><stop offset=".323" stop-color="#A78BFA"></stop><stop offset=".672" stop-color="#EC4899" stop-opacity=".3"></stop><stop offset="1" stop-color="#EC4899" stop-opacity="0"></stop></linearGradient><filter id=":r1:-b" x="71.656" y="-2" width="222" height="4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation=".5" result="effect1_foregroundBlur_311_43467"></feGaussianBlur></filter><filter id=":r1:-e" x="131" y="-10" width="238" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="4.5" result="effect1_foregroundBlur_311_43467"></feGaussianBlur></filter></defs>
+            </svg>
+
+            <div className="mb-10">
+                <svg className="mx-auto block h-4 w-auto align-middle text-blue-800" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 11 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 46 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 81 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 116 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 151 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 18 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 53 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 88 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 123 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 158 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 25 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 60 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 95 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 130 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 165 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 32 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 67 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 102 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 137 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 172 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 39 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 74 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 109 1)"></line><line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(0 0.83205 0.83205 0.5547 144 1)"></line>
+                </svg>
+            </div>
+
+        </div>
+    )
+}
