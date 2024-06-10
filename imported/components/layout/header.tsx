@@ -27,25 +27,27 @@ export default function DashboardHeader({ session }: { session: Session | null }
           <MobileSidebar />
         </div>
 
+        {/* ************ */}
+
         <div className="hidden lg:block">
           <Link
             href={'/dashboard'}
-            // target="_blank"
-            className="text-slate-900 font-medium text-xl hover:scale-110 transition-transform duration-300"
+            className="font-medium text-xl hover:scale-110 transition-transform duration-300"
           >
-            <span className="text-blue-600 font-bold text-3xl mr-1">A</span>
-            <span className="text-red-600 font-bold text-3xl mr-1">f</span>
+            <span className="text-blue-600 font-light text-3xl mr-1">A</span>
+            <span className="text-red-600 font-semibold text-3xl mr-1">f</span>
             <span className="text-yellow-600 font-bold text-3xl mr-1">y</span>
             <span className="text-green-600 font-bold text-3xl mr-1">a</span>
+            <span className="text-green-600 font-bold text-3xl mr-1">T</span>
+            <span className="text-green-600 font-bold text-3xl mr-1">e</span>
+            <span className="text-green-600 font-bold text-3xl mr-1">le</span>
             <span className="text-indigo-600 font-bold text-3xl mr-1">M</span>
             <span className="text-purple-600 font-bold text-3xl">e</span>
-            <span className="text-md text-gray-600 ml-1">d</span>
+            <span className="text-md text-gray-600 font-semibold ml-1">d</span>
           </Link>
         </div>
 
-
-
-        {/* <Input placeholder="Symptom, Service, Doc name, Specialty, med..." className="w-1/3" /> */}
+        {/* ************ */}
 
         <div className="flex items-center gap-2">
           <Dialog>
