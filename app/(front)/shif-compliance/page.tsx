@@ -113,7 +113,7 @@ const content = [
             "At AfyaMed, we prioritize compliance with healthcare regulations such as SHIF and GDPR. Our platform ensures the security and confidentiality of your personal health information. Collaborate securely with your team, clients, and stakeholders while staying compliant with industry standards.",
         content: (
             <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-                Healthcare Compliance
+                {/* Healthcare Compliance */}
             </div>
         ),
     },
@@ -123,7 +123,7 @@ const content = [
             "Our platform enables real-time collaboration while maintaining strict data security measures. With features like version control and real-time updates, you can work efficiently without compromising compliance. Rest assured that your data is protected in accordance with SHIF and GDPR requirements.",
         content: (
             <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-                Secure Data Handling
+                {/* Secure Data Handling */}
             </div>
         ),
     },
@@ -133,7 +133,7 @@ const content = [
             "We take GDPR compliance seriously to protect your privacy and ensure transparency in data processing. Our platform adheres to GDPR standards, giving you peace of mind when collaborating and sharing sensitive information. Experience seamless collaboration without sacrificing data protection.",
         content: (
             <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--blue-500),var(--indigo-500))] flex items-center justify-center text-white">
-                GDPR Compliance
+                {/* GDPR Compliance */}
             </div>
         ),
     },
@@ -143,7 +143,7 @@ const content = [
             "AfyaMed complies with SHIF regulations to safeguard your healthcare data. Our platform offers secure collaboration tools that meet SHIF requirements, allowing you to collaborate effectively while protecting sensitive information. Trust AfyaMed for seamless, compliant collaboration.",
         content: (
             <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--green-500),var(--lime-500))] flex items-center justify-center text-white">
-                SHIF Regulations
+                {/* SHIF Regulations */}
             </div>
         ),
     },
@@ -165,14 +165,13 @@ export default function HealthcareCompliance() {
                 <h3 className="text-center font-light text-2xl">
                     How We Comply with Regulations.
                 </h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
 
                     {
                         content?.map((item, index) => (
                             <Card key={index} className="my-4 p-3">
                                 <h2 className="text-2xl font-semibold">{item.title}</h2>
                                 <p className="text-gray-600">{item.description}</p>
-                                {item.content}
                             </Card>
                         ))
                     }

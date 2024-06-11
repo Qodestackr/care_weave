@@ -50,7 +50,8 @@ export default async function Page() {
 
   return (
     <ScrollArea className='container mt-10 mx-auto h-[90vh]'>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      HALLOO.
     </ScrollArea>
   );
 

@@ -7,6 +7,7 @@ import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import { Dispatch, SetStateAction } from "react";
 import { DashboardNavItem } from "@/types/nav";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface DashboardNavProps {
   items: DashboardNavItem[];
@@ -22,32 +23,33 @@ export function DashboardNav({ items, setOpen }: DashboardNavProps) {
 
   return (
     <nav className="grid items-start gap-2 dark:bg-slate-700 dark:text-gray-100">
-
-      {items.map((item, index) => {
-        // const Icon = Icons[item.icon];
-        return (
-          item.href && (
-            <Link
-              key={index}
-              href={item.disabled ? "/" : item.href}
-              onClick={() => {
-                if (setOpen) setOpen(false);
-              }}
-            >
-              <span
-                className={cn(
-                  "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
-                  path === item.href ? "bg-accent" : "transparent",
-                  item.disabled && "cursor-not-allowed opacity-80",
-                )}
+      <ScrollArea className="h-[90vh] w-[280px]">
+        {items.map((item, index) => {
+          // const Icon = Icons[item.icon];
+          return (
+            item.href && (
+              <Link
+                key={index}
+                href={item.disabled ? "/" : item.href}
+                onClick={() => {
+                  if (setOpen) setOpen(false);
+                }}
               >
-                {/* <Icon className="mr-2 h-4 w-4" /> */}
-                <span>{item.title}</span>
-              </span>
-            </Link>
-          )
-        );
-      })}
+                <span
+                  className={cn(
+                    "group my-2 flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
+                    path === item.href ? "bg-accent" : "transparent",
+                    item.disabled && "cursor-not-allowed opacity-80",
+                  )}
+                >
+                  {/* <Icon className="mr-2 h-4 w-4" /> */}
+                  <span>{item.title}</span>
+                </span>
+              </Link>
+            )
+          );
+        })}
+      </ScrollArea>
 
     </nav>
   );

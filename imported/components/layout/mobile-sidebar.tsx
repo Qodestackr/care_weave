@@ -14,21 +14,21 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 export function MobileSidebar({ className }: SidebarProps) {
   const [open, setOpen] = useState(false);
   return (
-    <>
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
-          <MenuIcon />
-        </SheetTrigger>
-        <SheetContent side="left" className="!px-0">
-          <div className="space-y-4 py-4">
-            <div className="px-3 py-2">
-              <div className="space-y-1">
-                <DashboardNav items={navItems} setOpen={setOpen} />
-              </div>
+
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <MenuIcon />
+      </SheetTrigger>
+      <SheetContent side="left" className="!px-0 w-[280px]">
+        <div className="space-y-4 py-4">
+          <div className="px-3 py-2">
+            <div className="space-y-1">
+              <DashboardNav items={navItems} setOpen={setOpen} />
             </div>
           </div>
-        </SheetContent>
-      </Sheet>
-    </>
+        </div>
+      </SheetContent>
+    </Sheet>
+
   );
 }

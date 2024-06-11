@@ -5,7 +5,7 @@ import { UserNav } from "./user-nav";
 import Link from "next/link";
 import { ModeToggle } from "./ThemeToggle/theme-toggle";
 import { FileQuestion } from "lucide-react";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+// import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import React from "react";
 import { Session } from "next-auth";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function DashboardHeader({ session }: { session: Session | null }) {
 

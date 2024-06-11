@@ -4,14 +4,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
-import { OTPInput, REGEXP_ONLY_DIGITS, SlotProps } from 'input-otp'
+import { OTPInput, REGEXP_ONLY_DIGITS, SlotProps } from 'input-otp';
 import { Lock, LockKeyhole } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 
 import { useForm } from "react-hook-form";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import ResetPasswordForm from '@/components/Frontend/ResetPasswordForm';
 
 // Inspired by Stripe's MFA input.
 function FakeDash() {
@@ -21,7 +23,6 @@ function FakeDash() {
         </div>
     )
 }
-
 
 // You can emulate a fake textbox caret!
 function FakeCaret() {
@@ -55,8 +56,8 @@ function Slot(props: SlotProps) {
 export default function ResetPassword() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const router = useRouter()
-    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm()
+    const router = useRouter();
+    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm();
 
     const handleResetPassword = (e: any) => {
         setIsSubmitted(true);
@@ -69,21 +70,20 @@ export default function ResetPassword() {
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
-                // progress: undefined,
                 theme: "light",
                 transition: Bounce,
             });
         }, 2300);
-        // setTimeout(() => { router.push('/auth/signin') }, 2800)
+        // setTimeout(() => { router.push('/login') }, 2800)
     }
 
     return (
         <>
-            <div className="mx-auto w-2/3 text-gray-900 flex flex-col justify-center">
+            <div className="mx-auto md:w-1/2 text-gray-900 flex flex-col justify-center">
 
                 <div className="my-3 bg-gray-50 shadow sm:rounded-lg flex justify-center flex-1">
-                    <div className='p-3'>
-                        <div className="mt-4 flex flex-col items-start">
+                    <div className='p-3 w-full'>
+                        <div className="mt-4 flex w-full flex-col items-start">
 
                             <h3 className='text-[#283779] font-semibold text-2xl'>Reset Password</h3>
                             {
@@ -105,7 +105,7 @@ export default function ResetPassword() {
                                             </AlertDescription>
                                         </Alert>
 
-                                        <form className="flex flex-col gap-2 mt-3 mb-2">
+                                        <form className="flex w-full flex-col gap-2 mt-3 mb-2">
                                             <ToastContainer
                                                 position="top-right"
                                                 autoClose={5000}
@@ -117,14 +117,13 @@ export default function ResetPassword() {
                                                 draggable
                                                 pauseOnHover
                                                 theme="light"
-                                            // transition:Bounce,
                                             />
                                             <Label htmlFor='otpinput'>Enter 6 digit sent to your phone.</Label>
                                             <OTPInput
                                                 pattern={REGEXP_ONLY_DIGITS}
                                                 onComplete={handleResetPassword}
                                                 maxLength={6}
-                                                containerClassName="outline-none group flex items-center has-[:disabled]:opacity-30"
+                                                containerClassName="outline-none w-full group flex items-center has-[:disabled]:opacity-30"
                                                 render={({ slots }) => (
                                                     <>
                                                         <div className="flex">
@@ -147,21 +146,29 @@ export default function ResetPassword() {
                                     </>
                                 )
                             }
-
                             <Button
                                 onClick={handleResetPassword}
                                 type='submit'
-                                className="mt-5 tracking-wide font-light text-white w-full py-6 
-                rounded-lg  transition-all duration-300 ease-in-out flex items-center 
-                justify-center focus:shadow-outline focus:outline-none">
+                                className="
+        mt-5 tracking-wide font-light text-white w-full py-6 
+        rounded-lg transition-all duration-300 ease-in-out flex items-center 
+        justify-center focus:shadow-outline focus:outline-none
+        bg-blue-600 hover:bg-blue-700
+        dark:bg-blue-800 dark:hover:bg-blue-900
+        dark:text-gray-200
+    ">
                                 <Lock />
                                 <span className="mx-2">
-                                    Reset Password
+                                    {
+                                        isSubmitted ? 'Reset Password' : 'Get OTP'
+                                    }
                                 </span>
                             </Button>
                         </div>
                     </div>
                 </div>
+
+                {/* <ResetPasswordForm /> */}
 
             </div>
         </>
