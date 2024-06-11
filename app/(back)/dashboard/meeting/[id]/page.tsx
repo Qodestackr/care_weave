@@ -5,14 +5,11 @@ import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 import { useParams } from 'next/navigation';
 import { useSession } from "next-auth/react"
 import { Loader } from 'lucide-react';
-
 import { useGetCallById } from '@/hooks/useGetCallById';
 import Alert from '../Alert';
 import MeetingSetup from '../MeetingSetup';
 import MeetingRoom from '../MeetingRoom';
-
 import { useStreamVideoClient } from '@stream-io/video-react-sdk';
-
 
 const MeetingPage = () => {
     const client = useStreamVideoClient();

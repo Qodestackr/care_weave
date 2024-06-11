@@ -228,6 +228,10 @@ model Compliance {
   hospital Hospital @relation(fields: [hospitalId], references: [id], onDelete: Cascade)
 }
 
+// yrs of experience, practising license, expiry date, professional profile image(Biz Logo, Professional Profile Image for Private Practitioners)
+
+// 
+
 model Hospital {
   id              Int           @id @default(autoincrement())
   name            String
@@ -241,6 +245,7 @@ model Hospital {
   doctors         DoctorProfile @relation(fields: [doctorProfileId], references: [id])
   shifts          Shift[]
   compliance      Compliance[]
+  profileImage    String?
   ///////////////////////////////////////////////
   //TODO :: ADD BANK AND PAYMENT DETAILS LATER//
   /////////////////////////////////////////////
@@ -249,15 +254,18 @@ model Hospital {
 }
 
 model LabProfile {
-  id           Int      @id @default(autoincrement())
-  name         String
-  address      String
-  contactEmail String
-  contactPhone String
-  adminId      Int
-  admin        User     @relation(fields: [adminId], references: [id])
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id                Int      @id @default(autoincrement())
+  name              String
+  address           String
+  contactEmail      String
+  contactPhone      String
+  adminId           Int
+  admin             User     @relation(fields: [adminId], references: [id])
+  yrsOfExperience   String
+  profileImage      String?
+  practicingLicense String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 }
 
 model PharmacyProfile {
@@ -266,6 +274,7 @@ model PharmacyProfile {
   address      String
   contactEmail String
   contactPhone String
+  profileImage String?
   adminId      Int
   admin        User     @relation(fields: [adminId], references: [id])
   createdAt    DateTime @default(now())

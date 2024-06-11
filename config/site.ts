@@ -1,10 +1,12 @@
-
 export const siteConfig = {
   name: "AfyaTelemed",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
-  description:
-    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+
+  url: "https://afyatelemed.vercel.app/",
+
+  ogImage: "https://afyatelemed.vercel.app//og.jpg",
+
+  description: "Accessible. Customizable. Healthcare Platform",
+
   links: {
     twitter: "https://twitter.com/afyatelemed",
     github: "https://github.com/afyatelemed",

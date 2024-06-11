@@ -57,12 +57,12 @@ export default function OnboardingSteps({
       ),
     },
     {
-      title: "lab Contact Information",
+      title: "Lab Contact Information",
       page: "contact",
       component: (
         <ContactInfo
           page={page}
-          title="lab Contact Information"
+          title="Lab Contact Information"
           description="Please fill in your lab contact Info"
           nextPage="education"
           userId={id}
@@ -72,13 +72,13 @@ export default function OnboardingSteps({
     },
 
     {
-      title: "lab Specialty Information",
+      title: "Lab Specialty Information",
       page: "education",
       component: (
         <EducationInfo
           specialties={specialties}
           page={page}
-          title="lab Specialty Information"
+          title="Lab Specialty Information"
           description="Please fill in your lab specialty info"
           nextPage="practice"
           formId={doctorProfileId ? doctorProfileId : savedDBData.id}
@@ -87,7 +87,7 @@ export default function OnboardingSteps({
       ),
     },
     {
-      title: "lab Practice Information",
+      title: "Lab Practice Information",
       page: "practice",
       component: (
         <PracticeInfo

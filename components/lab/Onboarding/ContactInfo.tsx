@@ -80,13 +80,13 @@ export default function ContactInfo({
       </div>
       <form className=" py-4 px-4  mx-auto " onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4 grid-cols-2">
-          <TextInput
+          {/* <TextInput
             label="Lab Email Address"
             register={register}
             name="email"
             errors={errors}
             placeholder="eg johndoe@gmail.com "
-          />
+          /> */}
           <TextInput
             label="Lab Mobile"
             register={register}

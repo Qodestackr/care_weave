@@ -188,16 +188,16 @@ export function PatientTable<TData, TValue>({
 
   return (
     <>
-      <Input
+      {/* <Input
         placeholder={`Search ${searchKey}...`}
         value={(table.getColumn(searchKey)?.getFilterValue() as string) ?? ""}
         onChange={(event) =>
           table.getColumn(searchKey)?.setFilterValue(event.target.value)
         }
         className="w-full md:max-w-sm"
-      />
-      <ScrollArea className="rounded-md border h-[calc(80vh-220px)]">
-        <Table className="relative">
+      /> */}
+      <ScrollArea className="rounded-md my-5 w-[100vw] mx-auto border h-[calc(80vh-220px)]">
+        <Table className="relative w-[100vw]">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -207,9 +207,9 @@ export function PatientTable<TData, TValue>({
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
                     </TableHead>
                   );
                 })}

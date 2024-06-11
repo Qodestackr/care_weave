@@ -1,3 +1,21 @@
+import withPWAInit from "@ducanh2912/next-pwa";
+
+const withPWA = withPWAInit({
+  dest: "public",
+  register: true,
+  scope: "/app",
+  sw: "service-worker.js",
+  cacheOnFrontEndNav: true,
+  aggressiveFrontEndNavCaching: true,
+  reloadOnOnline: true,
+  swcMinify: true,
+  disable: false,
+  workboxOptions: {
+    disableDevLogs: true,
+  },
+  cacheStartUrl: true,
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -21,4 +39,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPWA(nextConfig);

@@ -11,6 +11,8 @@ import { UpcomingPatientSchedule } from '@/imported/ui-components/page';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ERXResult from '@/imported/ui-components/all/page';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 // 
 export default function DoctorMaindDashboardScreen() {
     /*************************************/
@@ -84,7 +86,7 @@ export default function DoctorMaindDashboardScreen() {
 
 
     return (
-        <div className="flex-1 space-y-4 p-4 md:p-8 pt-6 dark:bg-black dark:text-gray-50">
+        <div className="flex-1 space-y-4 mb-10 h-[90vh] p-4 md:p-8 pt-6 dark:bg-black dark:text-gray-50">
 
             <Tabs defaultValue={'analytics'}>
                 <TabsList>
@@ -92,8 +94,8 @@ export default function DoctorMaindDashboardScreen() {
                     <TabsTrigger value="lab_orders">Lab Orders</TabsTrigger>
                 </TabsList>
 
-                <TabsContent value="lab_orders" className="space-y-4">
-                    {/* <div className="w-1/2 mx-auto">
+                <TabsContent value="lab_orders">
+                    <div className="mx-auto">
                         <PatientTable
                             searchKey="name"
                             pageNo={page}
@@ -102,9 +104,11 @@ export default function DoctorMaindDashboardScreen() {
                             totalUsers={totalUsers}
                             pageCount={pageCount}
                         />
-                    </div> */}
-                    {/* <ERXResult /> */}
-                    <LabResults />
+
+                        {/* <ERXResult /> */}
+                        <LabResults />
+                        <ScrollBar orientation="horizontal" />
+                    </div>
                 </TabsContent>
 
                 <TabsContent value="analytics" className="space-y-4">
@@ -380,6 +384,6 @@ export default function DoctorMaindDashboardScreen() {
                     <UpcomingPatientSchedule />
                 </TabsContent> */}
             </Tabs>
-        </div>
+        </div >
     )
 }

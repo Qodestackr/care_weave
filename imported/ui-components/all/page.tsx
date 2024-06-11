@@ -10,6 +10,8 @@ import dynamic from 'next/dynamic';
 import { Card } from '@/components/ui/card';
 import OutPatientClaimForm from './Outpatient';
 import ERXCardDocument from './ERXCardDocument';
+import { Button } from '@/components/ui/button';
+import { DownloadCloud } from 'lucide-react';
 
 
 const PDFDownloadLink = dynamic(
@@ -113,8 +115,11 @@ const downloadPdf = async () => {
 
 export default function ERXResult() {
     return (
-        <div className='container mx-auto'>
-            <button onClick={downloadPdf}>Download PDF Lol</button>
+        <div className='container mx-auto my-5'>
+            <Button onClick={downloadPdf} className='flex gap-2 justify-between items-center'>
+                <DownloadCloud style={{ strokeWidth: 1 }} />
+                <span>Download ERX Result as PDF</span>
+            </Button>
         </div>
     )
 }

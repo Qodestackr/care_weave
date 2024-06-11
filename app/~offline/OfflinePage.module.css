@@ -1,0 +1,11 @@
+.heading {
+  /* styles for the h1 element */
+  font-size: 2rem;
+  text-align: center;
+}
+
+.message {
+  /* styles for the h2 element */
+  margin-top: 1rem;
+  color: #ccc;
+}

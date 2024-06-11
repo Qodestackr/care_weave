@@ -18,7 +18,14 @@ import { getServerSession } from "next-auth";
 
 // import { ourFileRouter } from "~/app/api/uploadthing/core";
 
+
+const APP_NAME = "PWA App";
+const APP_DEFAULT_TITLE = "My Awesome PWA App";
+const APP_TITLE_TEMPLATE = "%s - PWA App";
+const APP_DESCRIPTION = "Best PWA app in the world!";
+
 export const metadata: Metadata = {
+  applicationName: APP_NAME,
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -38,7 +45,18 @@ export const metadata: Metadata = {
       url: "https://afyatelemed.com",
     },
   ],
+
   creator: "afyatelemed",
+
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_DEFAULT_TITLE,
+    // startUpImage: [],
+  },
+  formatDetection: {
+    telephone: false,
+  },
 
   openGraph: {
     type: "website",
@@ -72,7 +90,8 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  // manifest: `${siteConfig.url}/site.webmanifest`,
+  manifest: "/manifest.json",
 
 };
 
