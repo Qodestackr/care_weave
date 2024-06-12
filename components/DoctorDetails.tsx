@@ -191,8 +191,8 @@ export default function DoctorDetails({ doctor }: { doctor: DoctorDetail }) {
             className=" py-4 px-4  mx-auto "
             onSubmit={handleSubmit(onSubmit)}
           >
-            <h2 className="scroll-m-20 border-b pb-3 mb-6 text-3xl font-semibold tracking-tight first:mt-0 ">
-              Tell us a few Details about You
+            <h2 className="scroll-m-20 border-b pb-3 mb-6 text-xl font-light tracking-tight first:mt-0 ">
+              A few details about the appointment
             </h2>
             {step === 2 ? (
               <div className="space-y-6">

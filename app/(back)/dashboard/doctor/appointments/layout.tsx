@@ -16,16 +16,14 @@ export default async function AppointmentLayout({
     <div className="mt-10">
       {/* Header */}
       {/* 2 PANNELS */}
-      <div className="grid grid-cols-2 gap-3">
-        <div className="col-span-1  py-3 border-r border-gray-100">
+      <div className="grid grid-cols-1 md:gap-2">
+        <div className="px-3">
           <PanelHeader
             title="Appointments"
             count={appointments.length ?? 0}
             icon={Calendar}
           />
-          <div className="px-3">
-            <ListPanel appointments={appointments} />
-          </div>
+          <ListPanel appointments={appointments} />
         </div>
 
         <div className="col-span-1">{children}</div>

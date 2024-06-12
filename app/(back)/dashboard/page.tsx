@@ -14,12 +14,12 @@ export default async function Page() {
 
   if (role === "DOCTOR") {
     return (
-      <ScrollArea className='container mt-10 mx-auto h-[90vh]'>
+      <>
         <h1 className="scroll-m-20 text-2xl font-extrabold tracking-tight ">
           Dr. {user?.name}
         </h1>
         <DoctorMaindDashboardScreen />
-      </ScrollArea>
+      </>
     );
   }
 

@@ -26,18 +26,18 @@ export default function UpdateAppointmentForm() {
     }
 
     return (
-        <div className=" border shadow rounded-md p-4 mt-4">
+        <div className="bg-slate-100 border shadow rounded-md p-4 mt-4">
             <div className="sm:col-span-4">
                 <div className="flex items-center justify-between border-b">
-                    <h2 className="scroll-m-20 text-xl font-light tracking-tight py-2 mb-3">
+                    <h2 className="scroll-m-20 text-sm md:text-xl font-light tracking-tight py-2 mb-3">
                         Update Appointment Status Here
                     </h2>
                     <Button disabled={loading} onClick={handleUpdate}>
 
                         {loading ? "Saving please wait..." : (
                             <p className="flex gap-1">
-                                <PenLine style={{ strokeWidth: 1 }} />
-                                <span>Update</span>
+                                <PenLine className='w-4 h-4' style={{ strokeWidth: 1 }} />
+                                <span className='text-sm'>Update</span>
                             </p>
                         )}
                     </Button>
@@ -59,8 +59,8 @@ export default function UpdateAppointmentForm() {
                         />
                     </div> */}
 
-                    Create Appointment Link.
-                    Update the Status of the Appointment.
+                    {/* Create Appointment Link. */}
+                    {/* Update the Status of the Appointment. */}
                 </div>
             </div>
         </div>

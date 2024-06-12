@@ -10,7 +10,7 @@ import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 
 import { redirect } from 'next/navigation';
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const metadata: Metadata = {
   title: "AfyaMed Dashboard",
@@ -34,11 +34,11 @@ export default async function DashboardLayout({
       {/* REFERENCE: https://github.com/gaofubin/t3-app-template/blob/main/src/components/layout/index.tsx */}
       <div className="flex h-screen dark:bg-black dark:text-gray-50 border-collapse overflow-hidden">
         {/* <Sidebar /> */}
-        <ScrollArea className='container mt-10 mx-auto h-[90vh]'>
+        <ScrollArea className='container mt-10 mx-auto h-auto my-4'>
           <main className="x-4 sm:px-8 container mt-20">{children}</main>
+          <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </div>
-
     </div>
   );
 }

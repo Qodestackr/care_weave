@@ -21,7 +21,7 @@ export default function ListPanel({
           key={item.id}
           href={`/dashboard/doctor/appointments/view/${item.id}`}
           className={cn(
-            "border mb-2 border-gray-300 shadow-sm text-xs bg-white py-3 px-2 inline-block w-full rounded-md dark:text-slate-900",
+            "border mb-1 border-gray-300 shadow-sm text-xs bg-white py-3 px-2 inline-block w-full rounded-md dark:text-slate-900",
             pathname === `/dashboard/doctor/appointments/view/${item.id}` &&
               "border-blue-700 border-2"
           )}
