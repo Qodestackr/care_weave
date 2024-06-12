@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { ClipboardType, FlaskConical, GitPullRequestCreateArrow, Newspaper, Plus, Stethoscope, User } from "lucide-react";
 import Link from "next/link";
 import TabPatientRecentUpdates from './stash';
+import NotificationBadge from '@/components/ui/NotificationBadge';
 
 
 export default function PatientCTACards() {
@@ -11,10 +12,12 @@ export default function PatientCTACards() {
         <Tabs defaultValue='overview'>
             <TabsList>
                 <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="recent_updates">Recent Updates</TabsTrigger>
+                <TabsTrigger value="recent_updates">
+                    <NotificationBadge title='Recent Updates' />
+                </TabsTrigger>
             </TabsList>
-            <TabsContent value="overview">
-                <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <TabsContent value="overview" className='w-full'>
+                <div className="w-full md:container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="col-span-1">
                         <Link href={'/dashboard/e-triage'}>
                             <div className="bg-blue-300 rounded-lg shadow-lg p-6 flex justify-start items-center gap-2">

@@ -18,7 +18,7 @@ export default function PWAInstallModal() {
     useEffect(() => {
         // Check if the app is already installed
         const checkIfInstalled = () => {
-            if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+            if (window.matchMedia('(display-mode: standalone)').matches) {
                 console.log('App is already installed');
                 setIsInstalled(true);
                 setShowModal(false);

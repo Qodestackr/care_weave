@@ -8,14 +8,13 @@ const OfflinePage = () => {
     return (
         <>
             <Head>
-                <title>App Name - Offline</title>
+                <title>AfyaTelemed - Offline</title>
             </Head>
-            <h1>App Name</h1>
+            <h1>AfyaTelemed</h1>
             <h2>
                 You are offline. This page is a temporary fallback while the app is
                 offline.
             </h2>
-            {/* Add more content or functionalities here if needed */}
         </>
     );
 };

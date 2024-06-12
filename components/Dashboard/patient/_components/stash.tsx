@@ -65,7 +65,7 @@ export default function TabPatientRecentUpdates() {
     return (
         <Card className="w-full max-w-3xl">
             <CardHeader>
-                <CardTitle>Recent Updates</CardTitle>
+                <CardTitle className="font-light">Your Recent Updates</CardTitle>
             </CardHeader>
             <CardContent>
                 {/*  */}

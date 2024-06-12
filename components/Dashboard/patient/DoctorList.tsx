@@ -96,7 +96,7 @@ export default async function DoctorList() {
         <ScrollArea className='mt-6 mx-auto h-[90vh]'>
             <div className='mt-10 mx-auto w-full'>
                 {/* <FilterDoctorOptions /> */}
-                <h3 className='text-2xl text-center my-4 text-[#00416A] font-normal'>Select a Doctor</h3>
+                <h3 className='text-2xl text-center my-4 text-[#00416A] font-thin'>Select a Doctor</h3>
                 {/* {[...Array(numberOfTherapists)].map((_, index) => (
                 <Therapist fullName='Dr. James Gitau' />
             ))} */}

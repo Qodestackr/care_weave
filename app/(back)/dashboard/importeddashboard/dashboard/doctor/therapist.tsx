@@ -9,6 +9,7 @@ import { getFormattedDate } from "@/utils/getFormatedShortDate";
 import Link from 'next/link'
 
 import React from 'react'
+import Image from 'next/image';
 
 
 export default function Therapist({ imgSrc, fullName, }: any) {
@@ -18,7 +19,7 @@ export default function Therapist({ imgSrc, fullName, }: any) {
                 <img
                     src="/nurse-holding-table-computer.jpg"
                     alt="Therapist Profile"
-                    className="rounded-full w-20 h-20 m-3"
+                    className="rounded-full w-12 h-12 m-3"
                 />
                 <div className="flex flex-col justify-start items-start">
                     <h2 className="text-xl font-normal text-slate-700">{fullName}</h2>
@@ -62,10 +63,12 @@ export function DoctorCardX({ imgSrc, fullName, specialties, rating, queueCount,
                 <img
                     src={imgSrc || "/nurse-holding-table-computer.jpg"}
                     alt="Doctor Profile"
-                    className="rounded-full w-20 h-20"
+                    className="rounded-full w-12 h-12"
                 />
                 <div className="flex flex-col flex-grow">
-                    <h2 className="text-xl font-light text-[#00416A]">{fullName}</h2>
+                    <h2 className="text-xl flex gap-1 items-center font-light text-[#00416A]">{fullName}
+                        <span className="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
+                    </h2>
                     <div className="mt-2 flex flex-wrap gap-1">
                         {specialties.map((specialty: any, index: any) => (
                             <Badge key={index} className="bg-blue-500 text-white text-xs font-light">
@@ -96,16 +99,11 @@ export function DoctorCardX({ imgSrc, fullName, specialties, rating, queueCount,
                     ))}
                 </div>
             </div>
+
             <div className="w-full mt-4">
-                <h3 className="text-md font-light text-gray-700">{/**Insurances Accepted */}Accepts Insurance</h3>
-                <div className="flex flex-wrap gap-2 mt-2">
-                    {/* {insurances.map((insurance: any, index: any) => (
-                        <Badge key={index} className="bg-blue-500 text-white">
-                            {insurance}
-                        </Badge>
-                    ))} */}
-                </div>
+                <h3 className="text-md font-light text-gray-700">Accepts Insurance</h3>
             </div>
+
             <div className="my-2 flex justify-between items-center gap-2 border-[0.5px] border-gray-300 rounded-lg p-2 border-dotted">
                 <Link href="/dashboard/book-appointment">
                     <Button variant="outline" className='flex gap-1'>
@@ -133,7 +131,7 @@ export function DoctorCardY({ imgSrc, fullName, specialties, rating, queueCount,
                 <img
                     src={imgSrc || "/nurse-holding-table-computer.jpg"}
                     alt="Doctor Profile"
-                    className="rounded-full w-20 h-20"
+                    className="rounded-full w-12 h-12"
                 />
                 <div className="flex flex-col flex-grow">
                     <h2 className="text-xl font-light text-[#00416A]">{fullName}</h2>
