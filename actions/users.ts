@@ -207,9 +207,7 @@ export async function getDoctorBySlug(slug: string) {
               hourlyWage: true,
               yearsOfExperience: true,
               country: true,
-              city: true,
-              state: true,
-              primarySpecialization: true,
+              // primarySpecialization: true,
               otherSpecialties: true,
               hospitalName: true,
               hospitalAddress: true,
@@ -219,9 +217,9 @@ export async function getDoctorBySlug(slug: string) {
               hospitalHoursOfOperation: true,
               servicesOffered: true,
               insuranceAccepted: true,
-              educationHistory: true,
-              research: true,
-              accomplishments: true,
+              // educationHistory: true,
+              // research: true,
+              // accomplishments: true,
               // Add other specific fields you need from the DoctorProfile
               availability: {
                 select: {

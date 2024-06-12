@@ -31,8 +31,8 @@ export default async function Page({
                   <div className="py-3">
                     <p>{doctor.doctorProfile?.operationMode}</p>
                     <p>
-                      {doctor.doctorProfile?.state},{" "}
-                      {doctor.doctorProfile?.city},{" "}
+                      {/* {doctor.doctorProfile?.state},{" "} */}
+                      {/* {doctor.doctorProfile?.city},{" "} */}
                       {doctor.doctorProfile?.country}
                     </p>
                   </div>

@@ -8,6 +8,7 @@ import { getDayName } from "@/utils/getDayName";
 import { getFormattedDate } from "@/utils/getFormatedShortDate";
 import Link from 'next/link';
 import { Stethoscope, Video } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 export default async function DoctorList() {
     const numberOfTherapists = 2;
@@ -78,7 +79,8 @@ export default async function DoctorList() {
     const inpersonDoctors = _doctors.filter(
         (doctor) => doctor.doctorProfile?.operationMode === "In-person doctor visit"
     );
-    console.log(inpersonDoctors);
+
+    console.log('??', telhealthDoctors, '??');
 
     const renderAvailability = (availability) => {
         return Object.entries(availability).map(([day, times]) => (
@@ -96,7 +98,7 @@ export default async function DoctorList() {
         <ScrollArea className='mt-6 mx-auto h-[90vh]'>
             <div className='mt-10 mx-auto w-full'>
                 {/* <FilterDoctorOptions /> */}
-                <h3 className='text-2xl text-center my-4 text-[#00416A] font-thin'>Select a Doctor</h3>
+                <h3 className='text-2xl text-center my-4 text-[#00416A] font-thin dark:text-slate-200 dark:font-semibold'>Select a Doctor</h3>
                 {/* {[...Array(numberOfTherapists)].map((_, index) => (
                 <Therapist fullName='Dr. James Gitau' />
             ))} */}
@@ -104,133 +106,62 @@ export default async function DoctorList() {
                 <div
                     className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1'
                 >
-                    {doctors.map((doctor, index) => (
-                        <DoctorCardX
-                            key={index}
-                            imgSrc={doctor.imgSrc}
-                            fullName={doctor.fullName}
-                            specialties={doctor.specialties}
-                            rating={doctor.rating}
-                            queueCount={doctor.queueCount}
-                            timeSlots={doctor.timeSlots}
-                            insurances={doctor.insurances}
-                        />
-                    ))}
+                    {/* 
+                    
+                                            // <DoctorCardX
+                        //     key={index}
+                        //     imgSrc={doctor.imgSrc}
+                        //     fullName={doctor.fullName}
+                        //     specialties={doctor.specialties}
+                        //     rating={doctor.rating}
+                        //     queueCount={doctor.queueCount}
+                        //     timeSlots={doctor.timeSlots}
+                        //     insurances={doctor.insurances}
+                        // />*/}
+
 
                     {telhealthDoctors.map((doctor) => {
                         const { name, email, phone, doctorProfile } = doctor;
                         return (
-                            <div key={doctor.id} className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-4">
+                            <Link href={`/doctors/${doctor.slug}`} key={doctor.id} className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-4 dark:bg-slate-700 dark:text-slate-50">
                                 <div className="md:flex">
                                     <div className="md:flex-shrink-0">
                                         {doctor?.doctorProfile?.profilePicture ? (
-                                            <img className="h-48 w-full object-cover md:w-48" src={doctor?.doctorProfile?.profilePicture} alt={`${doctor?.name}`} />
+                                            <img className="h-18 w-18 
+                                            rounded-full object-cover" src={doctor?.doctorProfile?.profilePicture}
+                                                alt={`${doctor?.name}`} />
                                         ) : (
-                                            <div className="h-48 w-full flex items-center justify-center bg-gray-200 md:w-48">
+                                            <div className="h-18 rounded-full w-18 flex 
+                                            items-center justify-center bg-gray-200">
                                                 <span className="text-gray-500">No Image</span>
                                             </div>
                                         )}
                                     </div>
                                     <div className="p-8">
                                         <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{doctor?.doctorProfile?.operationMode}</div>
-                                        <h1 className="block mt-1 text-lg leading-tight font-medium text-black">{doctor?.doctorProfile?.firstName} {doctor?.doctorProfile?.lastName}</h1>
+                                        <h1 className="flex gap-1 mt-1 text-lg leading-tight font-medium">
+                                            <span>{doctor?.doctorProfile?.firstName} {doctor?.doctorProfile?.lastName}</span>
+                                            <span className="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
+                                            <span className="flex w-3 h-3 me-3 bg-gray-900 rounded-full dark:bg-gray-700"></span>
+                                        </h1>
                                         <p className="mt-2 text-gray-500">{doctor?.doctorProfile?.bio}</p>
                                         <div className="mt-4">
                                             <p className="text-sm text-gray-600"><strong>Email:</strong> {email}</p>
-                                            <p className="text-sm text-gray-600"><strong>Phone:</strong> {phone}</p>
-                                            <p className="text-sm text-gray-600"><strong>Hourly Wage:</strong> ${doctor?.doctorProfile?.hourlyWage}</p>
+                                            {/* <p className="text-sm text-gray-600"><strong>Phone:</strong> {phone}</p> */}
+                                            <p className="text-sm text-gray-600"><strong>Charges:</strong> KES.{doctor?.doctorProfile?.hourlyWage}</p>
                                             <div className="mt-4">
-                                                <h2 className="text-sm text-gray-600 font-semibold mb-2">Availability:</h2>
-                                                {renderAvailability(doctor?.doctorProfile?.availability)}
+                                                {/* <h2 className="text-sm text-gray-600 font-semibold mb-2">Availability:</h2> */}
+                                                {/* {renderAvailability(doctor?.doctorProfile?.availability)} */}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
             </div>
             {/* ***************************************************************************** */}
-            {telhealthDoctors.map((doctor) => {
-                const { name, email, phone, slug, doctorProfile } = doctor;
-                const {
-                    firstName,
-                    lastName,
-                    bio,
-                    profilePicture,
-                    hourlyWage,
-                    availability,
-                } = doctorProfile;
-                const times = availability?.[today] ?? null;
-
-                return (
-                    <>
-                        {times && times.length > 0 && (
-                            <div
-                                key={doctor.id}
-                                className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-slate-800 inline-flex flex-col py-8 px-6 rounded-md hover:border-gray-400 duration-300 transition-all mb-4"
-                            >
-                                <Link href={`/doctors/${slug}`}>
-                                    <h2 className="uppercase font-bold text-2xl tracking-widest">
-                                        {name}
-                                    </h2>
-                                    <div className="flex items-center gap-4 py-4">
-                                        <div className="relative">
-                                            {/* <Image
-                                                src={profilePicture ?? "/doc-profile.jpeg"}
-                                                width={243}
-                                                height={207}
-                                                alt={name}
-                                                className="w-24 h-24 rounded-full object-cover"
-                                            /> */}
-                                            <p className="absolute bottom-0 right-2 bg-blue-200 w-10 h-10 flex items-center justify-center rounded-full text-blue-700">
-                                                <Video className="w-6 h-6" />
-                                            </p>
-                                        </div>
-                                        <div className="flex flex-col gap-2">
-                                            <p className="flex items-center">
-                                                <Stethoscope className="w-4 h-4 mr-2 flex-shrink-0" />
-                                                <span>Family Medicine</span>
-                                            </p>
-                                            <p className="bg-green-200 dark:text-slate-900 py-3 px-6 uppercase ">
-                                                Available today
-                                            </p>
-                                        </div>
-                                    </div>
-                                </Link>
-                                <div className="pt-6 border-t border-gray-400 dark:border-gray-600">
-                                    <h3 className="flex gap-4 justify-between items-center">
-                                        <span className="text-gray-600 dark:text-gray-400">
-                                            {formattedDate}
-                                        </span>{" "}
-                                        <span className="font-bold">${hourlyWage}</span>
-                                    </h3>
-                                    <div className="py-3 grid grid-cols-3 gap-2">
-                                        {times.slice(0, 5).map((item, i) => {
-                                            return (
-                                                <Link
-                                                    className="bg-blue-600 text-sm text-white p-2 text-center"
-                                                    key={i}
-                                                    href={`/doctors/${slug}`}
-                                                >
-                                                    {item}
-                                                </Link>
-                                            );
-                                        })}
-                                        <Link
-                                            className="text-[0.7rem] text-center bg-blue-900 text-white py-2 px-3 truncate"
-                                            href={`/doctors/${slug}`}
-                                        >
-                                            More times
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </>
-                );
-            })}
             {/* ***************************************************************************** */}
         </ScrollArea>
     )
