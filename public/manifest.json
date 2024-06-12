@@ -1,27 +1,32 @@
 {
   "name": "AfyaTelemed",
-  "short_name": "AfyaTelemd",
+  "short_name": "AfyaMed",
+  "description": "AfyaMed revolutionizes healthcare, providing swift virtual consultations, prescription refills, and specialized care. Experience rapid, reliable medical services at your fingertips.",
   "icons": [
     {
-      "src": "/icons/android-chrome-192x192.png",
+      "src": "/iomt.jpg",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/android-chrome-384x384.png",
+      "src": "/iomt.jpg",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/iomt.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
+  "display_override": ["minimal-ui"],
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "splash_pages": null,
+  "prefer_related_applications": true
 }

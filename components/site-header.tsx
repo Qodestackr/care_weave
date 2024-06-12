@@ -23,6 +23,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { getInitials } from "@/utils/generateInitials";
+import PWAInstallModal from "@/components/PWAInstallModal";
+
 export function SiteHeader({ session }: { session: Session | null }) {
   const user = session?.user;
   const initials = getInitials(user?.name);
@@ -36,6 +38,11 @@ export function SiteHeader({ session }: { session: Session | null }) {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <MainNav />
         <MobileNav />
+
+        <div className="flex mx-2">
+          <PWAInstallModal />
+        </div>
+
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           {/* <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />

@@ -253,6 +253,7 @@ model Hospital {
   updatedAt       DateTime      @updatedAt
 }
 
+////////////////////////////////////////////////////////////
 model LabProfile {
   id                Int      @id @default(autoincrement())
   name              String
@@ -267,6 +268,7 @@ model LabProfile {
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 }
+////////////////////////////////////////////////////////////
 
 model PharmacyProfile {
   id           Int      @id @default(autoincrement())

@@ -126,3 +126,16 @@ export default async function RootLayout({
     </html>
   );
 }
+
+/***
+ * PWA Content:
+ * https://www.youtube.com/watch?v=hBUhfi778G8
+ * https://www.youtube.com/watch?v=kzJfiKQyD24
+ * https://medium.com/@srivishnu.k90/create-pwa-with-django-in-10-minutes-with-no-package-dependencies-b419fcff9af4
+ * https://medium.com/@srivishnu.k90/display-install-app-for-pwa-in-2-minutes-3f4cceea1be3
+ * 
+ * // https://www.pwabuilder.com/imageGenerator
+ * 
+ * /////////// https://www.youtube.com/watch?v=9AOf_uPMVpM/////////// MOST USEFUL
+ * https://gist.github.com/prof3ssorSt3v3/4ae0c69283f4b555bceadcce3e62077e
+ */

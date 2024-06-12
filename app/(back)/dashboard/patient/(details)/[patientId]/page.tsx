@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CalendarCheck2, MessageCircle, PillIcon, Settings2, TimerReset } from 'lucide-react';
@@ -43,7 +43,7 @@ export default function PatientPage() {
   };
 
   return (
-    <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
+    <ScrollArea className='w-full md:container mt-6 mx-auto h-[90vh]'>
       <div className="p-6 space-y-6">
         <Card>
           <CardHeader className="flex justify-start items-center gap-4">
@@ -66,10 +66,10 @@ export default function PatientPage() {
             <CardTitle className="text-2xl font-light">Manage Patient</CardTitle>
           </CardHeader>
           <CardContent className="flex  md:flex-row justify-around items-center gap-4">
-            <Button className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
+            {/* <Button className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
               <CalendarCheck2 style={{ strokeWidth: 2 }} />
               Manage Schedules
-            </Button>
+            </Button> */}
             <Button className="flex items-center gap-2 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition">
               <Settings2 style={{ strokeWidth: 2 }} />
               Refer/Change Clinician
@@ -83,19 +83,20 @@ export default function PatientPage() {
 
 
         <Tabs defaultValue='allergies'>
-          <TabsList className="grid grid-cols-2 justify-start items-start md:grid-cols-7 overflow-x-auto scrollbar-hide">
-            <TabsTrigger value="lab_results">Lab Results</TabsTrigger>
-            <TabsTrigger value="allergies">Allergies</TabsTrigger>
-            <TabsTrigger value="mhealth">mHealth Info</TabsTrigger>
-            <TabsTrigger value="prescriptions">Prescriptions</TabsTrigger>
-            <TabsTrigger value="diagnosis">Diagnosis</TabsTrigger>
-            <TabsTrigger value="notes">Notes</TabsTrigger>
-            <TabsTrigger value="insurance">Eligibility</TabsTrigger>
+          <TabsList className="flex items-center justify-start flex-wrap h-auto space-y-1">
+            <TabsTrigger value="lab_results" className='text-sm'>Lab Results</TabsTrigger>
+            <TabsTrigger value="allergies" className='text-sm'>Allergies</TabsTrigger>
+            <TabsTrigger value="mhealth" className='text-sm'>mHealth Info</TabsTrigger>
+            <TabsTrigger value="prescriptions&notes" className='text-sm'>Notes & Prescriptions</TabsTrigger>
+            <TabsTrigger value="diagnosis" className='text-sm'>Diagnosis</TabsTrigger>
+            {/* <TabsTrigger value="insurance">Eligibility</TabsTrigger> */}
+            <ScrollBar orientation='horizontal' />
+
           </TabsList>
 
 
-          <TabsContent value="lab_results">
-            <Card className='p-4'>
+          <TabsContent value="lab_results" className='w-full'>
+            <Card className='p-2'>
               <CardHeader>
                 <CardTitle className="text-lg font-semibold">Current Lab Results</CardTitle>
               </CardHeader>
@@ -123,8 +124,8 @@ export default function PatientPage() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="allergies">
-            <Card className='p-4'>
+          <TabsContent value="allergies" className='w-full'>
+            <Card className='p-2'>
               <CardContent>
                 <div className="text-sm text-gray-500 dark:text-gray-400">Allergies</div>
                 <div className="font-medium">{patientData.allergies}</div>
@@ -145,11 +146,11 @@ export default function PatientPage() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="mhealth">
+          <TabsContent value="mhealth" className='w-full'>
             <Card className='p-4 my-3'>
               <HealthSummaryGrid />
             </Card>
-            <Card className='p-4'>
+            <Card className='p-2'>
               <CardContent>
                 <div className="text-sm text-gray-500 dark:text-gray-400">Heart Rate</div>
                 <div className="font-medium">{patientData.mHealthInfo.heartRate}</div>
@@ -175,8 +176,8 @@ export default function PatientPage() {
             </Card>
           </TabsContent>
           {/*  */}
-          <TabsContent value="prescriptions">
-            <Card className='p-4'>
+          <TabsContent value="prescriptions&notes" className='w-full'>
+            <Card className='p-2'>
               <CardContent>
                 <div className="text-sm text-gray-500 dark:text-gray-400">Medication</div>
                 <div className="font-medium">{patientData.prescriptions.medication}</div>
@@ -197,7 +198,7 @@ export default function PatientPage() {
                 </Button>
               </div>
               <hr className="my-4" />
-              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-[40%] my-2 text-white gap-4 rounded flex items-center'>
+              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-full md:w-[40%] my-2 text-white gap-4 rounded flex items-center'>
                 <TimerReset style={{ strokeWidth: 1 }} />
                 <p className='text-sm'>
                   Last Updated: <span className='text-slate-200 text-sm'>2024, Jun 4 Time:20:45</span>
@@ -205,10 +206,27 @@ export default function PatientPage() {
               </div>
             </Card>
 
+            {/* NOTES */}
+            <Card className='p-2'>
+              <CardContent>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Recent Notes</div>
+                <div className="font-medium">{patientData.notes.recent}</div>
+                <hr className="my-4" />
+                <div className="text-sm text-gray-500 dark:text-gray-400">Next Appointment</div>
+                <div className="font-medium">{patientData.notes.nextAppointment}</div>
+              </CardContent>
+              <hr className="my-4" />
+              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-full md:w-[40%] my-2 text-white gap-4 rounded flex items-center'>
+                <TimerReset style={{ strokeWidth: 1 }} />
+                <p className='text-sm'>
+                  Last Updated: <span className='text-slate-200 text-sm'>2024, Jun 4 Time:20:45</span>
+                </p>
+              </div>
+            </Card>
           </TabsContent>
           {/*  */}
-          <TabsContent value="diagnosis">
-            <Card className='p-4'>
+          <TabsContent value="diagnosis" className='w-full'>
+            <Card className='p-2'>
               <CardContent>
                 <div className="text-sm text-gray-500 dark:text-gray-400">Conditions</div>
                 <div className="font-medium">{patientData.diagnosis.conditions}</div>
@@ -220,7 +238,7 @@ export default function PatientPage() {
                 <div className="font-medium">{patientData.diagnosis.tests}</div>
               </CardContent>
               <hr className="my-4" />
-              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-[40%] my-2 text-white gap-4 rounded flex items-center'>
+              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-full md:w-[40%] my-2 text-white gap-4 rounded flex items-center'>
                 <TimerReset style={{ strokeWidth: 1 }} />
                 <p className='text-sm'>
                   Last Updated: <span className='text-slate-200 text-sm'>2024, Jun 4 Time:20:45</span>
@@ -229,27 +247,9 @@ export default function PatientPage() {
             </Card>
           </TabsContent>
 
-          <TabsContent value="notes">
-            <Card className='p-4'>
-              <CardContent>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Recent Notes</div>
-                <div className="font-medium">{patientData.notes.recent}</div>
-                <hr className="my-4" />
-                <div className="text-sm text-gray-500 dark:text-gray-400">Next Appointment</div>
-                <div className="font-medium">{patientData.notes.nextAppointment}</div>
-              </CardContent>
-              <hr className="my-4" />
-              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-[40%] my-2 text-white gap-4 rounded flex items-center'>
-                <TimerReset style={{ strokeWidth: 1 }} />
-                <p className='text-sm'>
-                  Last Updated: <span className='text-slate-200 text-sm'>2024, Jun 4 Time:20:45</span>
-                </p>
-              </div>
-            </Card>
-          </TabsContent>
 
-          <TabsContent value="insurance">
-            <Card className="p-6 shadow-lg rounded-lg">
+          <TabsContent value="insurance" className='w-full'>
+            <Card className="p-2 shadow-lg rounded-lg">
 
               <div className='flex flex-col gap-3 justify-start items-start bg-slate-100 rounded-md p-2'>
                 <div className="flex gap-2">
@@ -272,7 +272,7 @@ export default function PatientPage() {
                 </div>
               </CardContent>
               <hr className="my-4" />
-              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-[40%] my-2 text-white gap-4 rounded flex items-center'>
+              <div id="last-updated-mhealth" className='bg-slate-500 p-3 w-full md:w-[40%] my-2 text-white gap-4 rounded flex items-center'>
                 <TimerReset style={{ strokeWidth: 1 }} />
                 <p className='text-sm'>
                   Last Updated: <span className='text-slate-200 text-sm'>2024, Jun 4 Time:20:45</span>
@@ -283,7 +283,7 @@ export default function PatientPage() {
 
         </Tabs>
       </div>
-
+      <ScrollBar orientation='horizontal' />
     </ScrollArea>
   );
 }

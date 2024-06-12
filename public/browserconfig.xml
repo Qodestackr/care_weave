@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <!-- Tile Configurations -->
+    <msapplication>
+        <!-- Tile color for pinned sites -->
+        <tile>
+            <square70x70logo src="/icons/ms-icon-70x70.png"/>
+            <square150x150logo src="/icons/ms-icon-150x150.png"/>
+            <square310x310logo src="/icons/ms-icon-310x310.png"/>
+            <TileColor>#ffffff</TileColor>
+        </tile>
+    </msapplication>
+
+    <!-- Notification Configurations -->
+    <msapplication>
+        <notification>
+            <polling-uri src="https://afyatelemed.vercel.app/polling-uri"/>
+            <polling-uri2 src="https://afyatelemed.vercel.app/polling-uri2"/>
+            <polling-uri3 src="https://afyatelemed.vercel.app/polling-uri3"/>
+            <polling-uri4 src="https://afyatelemed.vercel.app/polling-uri4"/>
+            <polling-uri5 src="https://afyatelemed.vercel.app/polling-uri5"/>
+            <polling-uri6 src="https://afyatelemed.vercel.app/polling-uri6"/>
+            <polling-uri7 src="https://afyatelemed.vercel.app/polling-uri7"/>
+            <polling-uri8 src="https://afyatelemed.vercel.app/polling-uri8"/>
+            <polling-uri9 src="https://afyatelemed.vercel.app/polling-uri9"/>
+            <polling-uri10 src="https://afyatelemed.vercel.app/polling-uri10"/>
+            <polling-uri11 src="https://afyatelemed.vercel.app/polling-uri11"/>
+            <polling-uri12 src="https://afyatelemed.vercel.app/polling-uri12"/>
+            <polling-uri13 src="https://afyatelemed.vercel.app/polling-uri13"/>
+            <polling-uri14 src="https://afyatelemed.vercel.app/polling-uri14"/>
+            <polling-uri15 src="https://afyatelemed.vercel.app/polling-uri15"/>
+            <polling-uri16 src="https://afyatelemed.vercel.app/polling-uri16"/>
+            <polling-uri17 src="https://afyatelemed.vercel.app/polling-uri17"/>
+            <polling-uri18 src="https://afyatelemed.vercel.app/polling-uri18"/>
+            <polling-uri19 src="https://afyatelemed.vercel.app/polling-uri19"/>
+            <polling-uri20 src="https://afyatelemed.vercel.app/polling-uri20"/>
+            <frequency>20</frequency>
+            <cycle>1</cycle>
+        </notification>
+    </msapplication>
+</browserconfig>
