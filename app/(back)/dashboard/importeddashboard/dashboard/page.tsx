@@ -129,7 +129,7 @@ export default async function DashboardMain() {
 
         <Tabs defaultValue={user?.isDoctor ? 'analytics' : 'overview'}>
 
-          <TabsList>
+          <TabsList className="overflow-x-auto scrollbar-hide">
             {user?.isDoctor ? null : <TabsTrigger value="overview">Overview</TabsTrigger>}
 
             {user?.isDoctor && <TabsTrigger value="analytics">Analytics</TabsTrigger>}

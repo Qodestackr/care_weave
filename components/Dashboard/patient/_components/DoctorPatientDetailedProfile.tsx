@@ -82,7 +82,7 @@ export default function DoctorPatientDetailedProfile() {
 
 
                 <Tabs defaultValue='allergies'>
-                    <TabsList className="grid grid-cols-2 justify-start items-start md:grid-cols-7">
+                    <TabsList className="grid grid-cols-2 justify-start items-start md:grid-cols-7 overflow-x-auto scrollbar-hide">
                         <TabsTrigger value="lab_results">Lab Results</TabsTrigger>
                         <TabsTrigger value="allergies">Allergies</TabsTrigger>
                         <TabsTrigger value="mhealth">mHealth Info</TabsTrigger>

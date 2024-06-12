@@ -22,7 +22,7 @@ export default async function Page() {
           Settings
         </h2>
         <Tabs defaultValue="availability" className="w-[800px]">
-          <TabsList>
+          <TabsList className="overflow-x-auto scrollbar-hide">
             <TabsTrigger value="availability">Availability Settings</TabsTrigger>
             <TabsTrigger value="service">Service Settings</TabsTrigger>
           </TabsList>

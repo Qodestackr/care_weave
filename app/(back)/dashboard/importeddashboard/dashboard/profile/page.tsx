@@ -34,7 +34,7 @@ export default function ProfileSettings() {
       </div>
 
       <Tabs defaultValue="profile">
-        <TabsList className="">
+        <TabsList className="overflow-x-auto scrollbar-hide">
           <TabsTrigger value="profile">Profile</TabsTrigger>
           <TabsTrigger value="availability">Availability</TabsTrigger>
           <TabsTrigger value="provider_info">Provider Info.</TabsTrigger>
