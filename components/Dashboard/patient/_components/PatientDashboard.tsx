@@ -1,7 +1,5 @@
 // import { columns } from "@/components/tables/patient-tables/columns";
 // import { PatientTable } from "@/components/tables/patient-tables/patient-table";
-
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Patient } from "@/constants/data";
@@ -43,7 +41,7 @@ export default async function PatientDashboard({ searchParams }: paramsProps) {
   const employee: Patient[] = employeeRes.users;
 
   return (
-    <ScrollArea className='md:w-2/3 mx-auto h-[90vh]'>
+    <section className="w-full">
       <PatientCTACards />
 
       {/* <div className="flex-1 space-y-4  p-4 md:p-8 pt-6">
@@ -71,6 +69,6 @@ export default async function PatientDashboard({ searchParams }: paramsProps) {
       {/*  */}
       {/* <DoctorPatientDetailedProfile /> */}
       {/*  */}
-    </ScrollArea>
+    </section>
   );
 }

@@ -6,7 +6,6 @@ import Link from "next/link";
 import TabPatientRecentUpdates from './stash';
 import NotificationBadge from '@/components/ui/NotificationBadge';
 
-
 export default function PatientCTACards() {
     return (
         <Tabs defaultValue='overview'>
@@ -17,6 +16,7 @@ export default function PatientCTACards() {
                 </TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className='w-full'>
+
                 <div className="w-full md:container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="col-span-1">
                         <Link href={'/dashboard/e-triage'}>
