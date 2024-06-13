@@ -9,7 +9,7 @@ import { UploadDropzone } from "@/utils/uploadthing";
 export default function PageShareToDoc() {
 
   return (
-    <ScrollArea className='container my-8 mx-auto h-[90vh]'>
+    <>
       {/* <UploadButton
                 endpoint='imageUploader'
                 // onBeforeUploadBegin={}
@@ -40,7 +40,7 @@ export default function PageShareToDoc() {
       //     setError(fieldErrors.foo[0] ?? "");
       // }}
       />
-    </ScrollArea>
+    </>
   )
 }
 

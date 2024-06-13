@@ -1,15 +1,14 @@
-import { getServices } from "@/actions/services";
+// import { getServices } from "@/actions/services";
 import { getSpecialties } from "@/actions/specialities";
-import HomeDisplayCard from "@/components/Dashboard/Doctor/HomeDisplayCard";
-import ListPanel from "@/components/Dashboard/Doctor/ListPanel";
+// import HomeDisplayCard from "@/components/Dashboard/Doctor/HomeDisplayCard";
+// import ListPanel from "@/components/Dashboard/Doctor/ListPanel";
 import NewButton from "@/components/Dashboard/Doctor/NewButton";
 import PanelHeader from "@/components/Dashboard/Doctor/PanelHeader";
-import ServiceCard from "@/components/Dashboard/ServiceCard";
-import ServiceForm from "@/components/Dashboard/ServiceForm";
+// import ServiceCard from "@/components/Dashboard/ServiceCard";
+// import ServiceForm from "@/components/Dashboard/ServiceForm";
 import SpecialtyCard from "@/components/Dashboard/SpecialtyCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Anvil, Calendar, LayoutGrid } from "lucide-react";
-import React from "react";
+import { Anvil } from "lucide-react";
 
 export default async function Page() {
   const specialties = (await getSpecialties()).data || [];

@@ -27,13 +27,13 @@ export default function Page() {
 
 
     return (
-        <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
+        <>
             <ConsultationPaymentDetails doctor={doctor} appointment={appointment} />
             <TestHHHPayments />
             <AppointmentPaymentMethod />
             <PaymentSuccess />
             <PaymentFailed />
-        </ScrollArea>
+        </>
     )
 }
 

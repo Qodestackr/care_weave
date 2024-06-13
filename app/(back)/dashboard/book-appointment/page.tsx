@@ -54,38 +54,36 @@ export default function BookAppointment() {
     };
 
     return (
-        <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
+        <div>
             <div>
-                <div>
-                    <div className="mx-auto grid px-6 pb-20">
-                        <Alert className='mt-8 w-full'>
-                            <RocketIcon className="h-4 w-4" />
-                            <AlertTitle className='text-green-600'>Exciting News!</AlertTitle>
-                            <AlertDescription className='text-gray-700'>
-                                You can now book appointments or receive direct care from your favorite hospitals through AfyaMed. Take control of your healthcare journey today!
-                            </AlertDescription>
-                        </Alert>
+                <div className="mx-auto grid px-6 pb-20">
+                    <Alert className='mt-8 w-full'>
+                        <RocketIcon className="h-4 w-4" />
+                        <AlertTitle className='text-green-600'>Exciting News!</AlertTitle>
+                        <AlertDescription className='text-gray-700'>
+                            You can now book appointments or receive direct care from your favorite hospitals through AfyaMed. Take control of your healthcare journey today!
+                        </AlertDescription>
+                    </Alert>
 
-                        <div className="w-full">
-                            <ConsultationPaymentDetails doctor={doctor} appointment={appointment} />
-                        </div>
-                        <Card className="flex flex-col gap-2 my-4 py-4 justify-center items-center">
-                            <h2 className='text-slate-800 font-semibold text-xl'>
-                                Let's help you find the lowest cost option: Choose Payment Method
-                            </h2>
-                            <Button className='rounded-full w-[60%] py-8 text-[#283779] shadow-[#b1dcec] shadow-lg bg-gray-100 hover:bg-blue-500 hover:text-gray-100'
-                                onClick={() => handlePaymentMethodSelect('insurance')}
-                            >
-                                Pay with Insurance
-                            </Button>
-                            <Button className='rounded-full w-[60%] py-8 text-[#283779] shadow-[#b1dcec] shadow-lg bg-gray-100 hover:bg-blue-500 hover:text-gray-100'
-                                onClick={() => handlePaymentMethodSelect('cash')}
-                            >Proceed With Other Payment Options
-                            </Button>
-                        </Card>
+                    <div className="w-full">
+                        <ConsultationPaymentDetails doctor={doctor} appointment={appointment} />
                     </div>
+                    <Card className="flex flex-col gap-2 my-4 py-4 justify-center items-center">
+                        <h2 className='text-slate-800 font-semibold text-xl'>
+                            Let's help you find the lowest cost option: Choose Payment Method
+                        </h2>
+                        <Button className='rounded-full w-[60%] py-8 text-[#283779] shadow-[#b1dcec] shadow-lg bg-gray-100 hover:bg-blue-500 hover:text-gray-100'
+                            onClick={() => handlePaymentMethodSelect('insurance')}
+                        >
+                            Pay with Insurance
+                        </Button>
+                        <Button className='rounded-full w-[60%] py-8 text-[#283779] shadow-[#b1dcec] shadow-lg bg-gray-100 hover:bg-blue-500 hover:text-gray-100'
+                            onClick={() => handlePaymentMethodSelect('cash')}
+                        >Proceed With Other Payment Options
+                        </Button>
+                    </Card>
                 </div>
             </div>
-        </ScrollArea>
+        </div>
     )
 }

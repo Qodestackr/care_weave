@@ -81,7 +81,7 @@ const PatientServiceDetail = () => {
     };
 
     return (
-        <ScrollArea className='container mt-6 mx-auto h-[90vh] my-5'>
+        <>
             <div className="p-4 max-w-4xl mx-auto bg-white shadow-lg rounded-lg">
                 <div className="text-center border-b border-gray-200 pb-4 mb-4">
                     <h1 className="text-2xl font-light">AfyaTelemed</h1>
@@ -191,7 +191,7 @@ const PatientServiceDetail = () => {
 
             {/*  */}
             <OutPatientClaimForm />
-        </ScrollArea>
+        </>
     );
 };
 

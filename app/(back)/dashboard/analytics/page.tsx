@@ -80,7 +80,7 @@ export default function Analytics() {
   ];
 
   return (
-    <ScrollArea className="container mt-6 mx-auto h-[90vh]">
+    <>
       <div className="mt-2">
         <BreadCrumb items={breadcrumbItems} />
       </div>
@@ -95,6 +95,6 @@ export default function Analytics() {
           </div>
         ))}
       </div>
-    </ScrollArea>
+    </>
   );
 }

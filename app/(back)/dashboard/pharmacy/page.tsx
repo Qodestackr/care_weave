@@ -8,11 +8,11 @@ import React from 'react'
 /******************************************/
 export default function Page() {
     return (
-        <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
+        <>
             <UnderConstruction />
             <ERXResult />
             <ERxDetails />
-        </ScrollArea>
+        </>
     )
 }
 /******************************************/ 

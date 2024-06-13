@@ -1,8 +1,6 @@
 import React from 'react'
 import { Card, CardHeader, CardDescription, CardContent, CardTitle } from '@/components/ui/card'
-import Image from 'next/image'
 import { FlaskConical, MoveRight, Stethoscope } from 'lucide-react'
-import { ScrollArea } from '@/components/ui/scroll-area';
 import RequestLabCardDetails from '@/app/(back)/dashboard/importeddashboard/dashboard/lab/RequestLabCardDetails';
 import FillLabResults from '@/app/(back)/dashboard/importeddashboard/dashboard/lab/FillLabResults';
 import LabResults from './LabResults';
@@ -33,8 +31,8 @@ export default function LabDashboard() {
     };
 
     return (
-        <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
 
+        <>
             <div className="flex flex-1 flex-col gap-6 p-6 md:p-10">
                 <Card className='w-full'>
                     <CardHeader>
@@ -122,9 +120,7 @@ export default function LabDashboard() {
                     </div>
                 </Card>
             </div>
-
             <RequestLabCardDetails />
-
             {/* <ReferralForm /> */}
             <div className="w-full mx-auto">
                 <FillLabResults />
@@ -144,10 +140,8 @@ export default function LabDashboard() {
             </div> */}
             {/* <OrderTest /> */}
             <LabResults />
-
             {/*  */}
-
-        </ScrollArea>
+        </>
     )
 }
 // book-lab-tests.tsx

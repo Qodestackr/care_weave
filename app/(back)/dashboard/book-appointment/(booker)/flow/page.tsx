@@ -78,7 +78,7 @@ const appointment = {
 
 export default function StepperFooterInside() {
     return (
-        <ScrollArea className='container mt-1 mx-auto h-[90vh]'>
+        <>
             {/*  */}
             <Alert className='mt-8 w-full'>
                 <RocketIcon className="h-4 w-4" />
@@ -122,7 +122,7 @@ export default function StepperFooterInside() {
                 })}
                 <FinalStep />
             </Stepper>
-        </ScrollArea>
+        </>
     );
 }
 

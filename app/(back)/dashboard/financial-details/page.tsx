@@ -1,9 +1,6 @@
 'use client';
-
 import React from 'react'
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, BarChart, Legend, Cell, Pie, PieChart } from 'recharts';
-import BreadCrumb from '@/imported/components/breadcrumb';
 
 const data = [
   { year: '2016', consultations: 4000, prescriptions: 2400 },
@@ -85,9 +82,7 @@ const PieChartPlotColors = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f0e"];
 
 export default function FinancialDetails() {
   return (
-    <ScrollArea className='container mt-10 mx-auto h-[90vh]'>
-      <BreadCrumb items={[{ title: "Financial Details", link: "/dashboard/Financial Details" }]} />
-
+    <>
       <section className="flex flex-wrap flex-row justify-between items-center">
         <div className="px-2 bg-gray-700 shadow rounded h-300px">
           <div className="">
@@ -188,6 +183,6 @@ export default function FinancialDetails() {
           Some Descriptions of Key Metrics
         </div>
       </section>
-    </ScrollArea>
+    </>
   )
 }

@@ -1,7 +1,9 @@
 "use client";
+import TextInput from '@/components/FormInputs/TextInput';
 import { Button } from '@/components/ui/button';
 import { PenLine } from 'lucide-react';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 
 export type AppointmentUpdateProps = {
@@ -15,6 +17,8 @@ export default function UpdateAppointmentForm() {
     const [loading, setLoading] = React.useState(false);
 
     // meeting link , meeting provider, status of the appt.
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<AppointmentUpdateProps>()
 
     const handleUpdate = async () => {
         try {
@@ -43,6 +47,8 @@ export default function UpdateAppointmentForm() {
                     </Button>
                 </div>
                 <div className=" mt-2">
+                    <TextInput label={'Add Meeting Link'} register={register} name={''} errors={undefined}
+                    />
                     {/* <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">
                             KES.

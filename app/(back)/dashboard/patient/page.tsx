@@ -41,12 +41,12 @@ export default async function Page({ searchParams }: paramsProps) {
   const employee: Patient[] = employeeRes.users;
 
   return (
-    <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
+    <>
       <PatientList />
       {/* <ReferPatientComboboxDropdownMenu />
       <ERxDetails />
       <ERXResult />
       <LabResults /> */}
-    </ScrollArea>
+    </>
   );
 }
