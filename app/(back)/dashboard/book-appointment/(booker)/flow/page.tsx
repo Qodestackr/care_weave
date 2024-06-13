@@ -83,7 +83,7 @@ export default function StepperFooterInside() {
             <Alert className='mt-8 w-full'>
                 <RocketIcon className="h-4 w-4" />
                 <AlertTitle className='text-green-600'>Exciting News!</AlertTitle>
-                <AlertDescription className='text-gray-700'>
+                <AlertDescription className='text-gray-700 dark:text-slate-50'>
                     You can now book appointments or receive direct care from your favorite hospitals through AfyaMed. Take control of your healthcare journey today!
                 </AlertDescription>
             </Alert>

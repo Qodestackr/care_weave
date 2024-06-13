@@ -22,8 +22,8 @@ export function DashboardNav({ items, setOpen }: DashboardNavProps) {
   }
 
   return (
-    <nav className="grid items-start gap-2 dark:bg-slate-700 dark:text-gray-100">
-      <ScrollArea className="h-[90vh] w-[280px]">
+    <nav className="grid items-start gap-2 dark:text-gray-100">
+      <ScrollArea className="w-full">
         {items.map((item, index) => {
           // const Icon = Icons[item.icon];
           return (
