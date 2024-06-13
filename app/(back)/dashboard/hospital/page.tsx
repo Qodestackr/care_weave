@@ -1,14 +1,20 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from "@/components/ui/input";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Label } from '@/components/ui/label';
 
 export default function HospitalPage() {
+
     return (
         <main className='w-full md:container mx-auto'>
+            {/*  */}
+            <h1 className='flex gap-2 justify-start items-center'>
+                <HospitalIcon style={{ strokeWidth: 2 }} className='text-blue-800 dark:text-slate-200' />
+                <span>Coptic Hospital, Nairobi</span>
+            </h1>
+            {/*  */}
             <div>
                 <div>
                     <div className="flex flex-col min-h-screen">
@@ -27,7 +33,7 @@ export default function HospitalPage() {
                                                         <AvatarFallback>DR</AvatarFallback>
                                                     </Avatar>
                                                     <div>
-                                                        <div className="font-medium">Dr. Jane Doe</div>
+                                                        <div className="font-light">Dr. Jane Doe</div>
                                                         <div className="text-gray-500 dark:text-gray-400">Physician</div>
                                                     </div>
                                                 </div>
@@ -49,7 +55,7 @@ export default function HospitalPage() {
                                                         <AvatarFallback>NR</AvatarFallback>
                                                     </Avatar>
                                                     <div>
-                                                        <div className="font-medium">Nurse Sarah</div>
+                                                        <div className="font-light">Nurse Sarah</div>
                                                         <div className="text-gray-500 dark:text-gray-400">Nurse</div>
                                                     </div>
                                                 </div>
@@ -71,7 +77,7 @@ export default function HospitalPage() {
                                                         <AvatarFallback>AD</AvatarFallback>
                                                     </Avatar>
                                                     <div>
-                                                        <div className="font-medium">Admin Bob</div>
+                                                        <div className="font-light">Admin Bob</div>
                                                         <div className="text-gray-500 dark:text-gray-400">Administrator</div>
                                                     </div>
                                                 </div>
@@ -107,7 +113,7 @@ export default function HospitalPage() {
                                                         <AvatarFallback>JD</AvatarFallback>
                                                     </Avatar>
                                                     <div>
-                                                        <div className="font-medium">John Doe</div>
+                                                        <div className="font-light">John Doe</div>
                                                         <div className="text-gray-500 dark:text-gray-400">Patient ID: 12345</div>
                                                     </div>
                                                 </div>
@@ -125,7 +131,7 @@ export default function HospitalPage() {
                                                         <AvatarFallback>JA</AvatarFallback>
                                                     </Avatar>
                                                     <div>
-                                                        <div className="font-medium">Jane Appleseed</div>
+                                                        <div className="font-light">Jane Appleseed</div>
                                                         <div className="text-gray-500 dark:text-gray-400">Patient ID: 54321</div>
                                                     </div>
                                                 </div>
@@ -143,7 +149,7 @@ export default function HospitalPage() {
                                                         <AvatarFallback>SM</AvatarFallback>
                                                     </Avatar>
                                                     <div>
-                                                        <div className="font-medium">Sarah Miller</div>
+                                                        <div className="font-light">Sarah Miller</div>
                                                         <div className="text-gray-500 dark:text-gray-400">Patient ID: 98765</div>
                                                     </div>
                                                 </div>
@@ -235,8 +241,8 @@ export default function HospitalPage() {
                                                 </Select>
                                             </div>
                                             <div className="space-y-2">
-                                                <Label htmlFor="logo">Logo</Label>
-                                                <Input id="logo" type="file" />
+                                                <Label htmlFor="logo">Hospital Logo</Label>
+                                                {/* <Input id="logo" type="file" /> */}
                                             </div>
                                         </div>
                                     </CardContent>
@@ -248,9 +254,9 @@ export default function HospitalPage() {
                         </main>
                     </div>
                     {/*  */}
-                    <section>
+                    <section className='bg-gray-100 shadow-lg my-4 rounded p-4'>
                         <div className="flex items-center justify-between">
-                            <h2 className="text-xl font-semibold">Upcoming Appointments</h2>
+                            <h2 className="text-xl font-normal">Upcoming Appointments</h2>
                             <Button variant="outline" size="sm">
                                 View All
                             </Button>
@@ -260,8 +266,8 @@ export default function HospitalPage() {
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-lg font-medium">John Doe</h3>
-                                            <p className="text-gray-500 dark:text-gray-400">Patient ID: 12345</p>
+                                            <h3 className="font-light">John Doe</h3>
+                                            <p className="text-gray-500 dark:text-gray-400 text-sm">Patient ID: 12345</p>
                                         </div>
                                         <Badge>Confirmed</Badge>
                                     </div>
@@ -269,7 +275,7 @@ export default function HospitalPage() {
                                 <CardContent>
                                     <div className="grid gap-2">
                                         <div>
-                                            <h4 className="text-base font-medium">Appointment Details</h4>
+                                            <h4 className="text-base font-light">Appointment Details</h4>
                                             <p className="text-gray-500 dark:text-gray-400">
                                                 Date: June 15, 2023
                                                 <br />
@@ -293,7 +299,7 @@ export default function HospitalPage() {
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-lg font-medium">Jane Doe</h3>
+                                            <h3 className="text-lg font-light">Jane Doe</h3>
                                             <p className="text-gray-500 dark:text-gray-400">Patient ID: 67890</p>
                                         </div>
                                         <Badge>Pending</Badge>
@@ -302,7 +308,7 @@ export default function HospitalPage() {
                                 <CardContent>
                                     <div className="grid gap-2">
                                         <div>
-                                            <h4 className="text-base font-medium">Appointment Details</h4>
+                                            <h4 className="text-base font-light">Appointment Details</h4>
                                             <p className="text-gray-500 dark:text-gray-400">
                                                 Date: June 17, 2023
                                                 <br />
@@ -326,7 +332,7 @@ export default function HospitalPage() {
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-lg font-medium">Bob Smith</h3>
+                                            <h3 className="text-lg font-light">Bob Smith</h3>
                                             <p className="text-gray-500 dark:text-gray-400">Patient ID: 54321</p>
                                         </div>
                                         <Badge>Confirmed</Badge>
@@ -335,7 +341,7 @@ export default function HospitalPage() {
                                 <CardContent>
                                     <div className="grid gap-2">
                                         <div>
-                                            <h4 className="text-base font-medium">Appointment Details</h4>
+                                            <h4 className="text-base font-light">Appointment Details</h4>
                                             <p className="text-gray-500 dark:text-gray-400">
                                                 Date: June 20, 2023
                                                 <br />
@@ -357,9 +363,10 @@ export default function HospitalPage() {
                             </Card>
                         </div>
                     </section>
-                    <section>
+                    {/*  */}
+                    <section className='bg-slate-100 shadow-lg my-4 rounded p-4'>
                         <div className="flex items-center justify-between">
-                            <h2 className="text-xl font-semibold">Recent Activity</h2>
+                            <h2 className="text-xl font-normal">Recent Activity</h2>
                             <Button variant="outline" size="sm">
                                 View All
                             </Button>
@@ -369,7 +376,7 @@ export default function HospitalPage() {
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-lg font-medium">New Patient Registered</h3>
+                                            <h3 className="text-lg font-light">New Patient Registered</h3>
                                             <p className="text-gray-500 dark:text-gray-400">June 12, 2023</p>
                                         </div>
                                         <Badge>Completed</Badge>
@@ -378,7 +385,7 @@ export default function HospitalPage() {
                                 <CardContent>
                                     <div className="grid gap-2">
                                         <div>
-                                            <h4 className="text-base font-medium">Patient Details</h4>
+                                            <h4 className="text-base font-light">Patient Details</h4>
                                             <p className="text-gray-500 dark:text-gray-400">
                                                 Name: Jane Doe
                                                 <br />
@@ -398,7 +405,6 @@ export default function HospitalPage() {
                                     </div>
                                 </CardContent>
                             </Card>
-                            <Card />
                         </div>
                     </section>
                 </div>

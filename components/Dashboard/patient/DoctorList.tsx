@@ -125,27 +125,31 @@ export default async function DoctorList() {
                         <Link href={`/doctors/${doctor.slug}`} key={doctor.id} className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-4 dark:bg-slate-700 dark:text-slate-50">
                             <div className="md:flex">
                                 <div className="md:flex-shrink-0">
-                                    {doctor?.doctorProfile?.profilePicture ? (
+                                    <img className="h-20 w-20 p-3 rounded-full object-cover flex justify-center items-center mx-auto" src={
+                                        //doctor?.doctorProfile?.profilePicture || 
+                                        '/male-doctor-standing-with-digital.jpg'}
+                                        alt={`${doctor?.name}`} />
+                                    {/* {doctor?.doctorProfile?.profilePicture ? (
                                         <img className="h-18 w-18 
-                                            rounded-full object-cover" src={doctor?.doctorProfile?.profilePicture}
+                                            rounded-full object-cover" src={doctor?.doctorProfile?.profilePicture || '"/doc/doc5.jpg"'}
                                             alt={`${doctor?.name}`} />
                                     ) : (
                                         <div className="h-18 rounded-full w-18 flex 
                                             items-center justify-center bg-gray-200">
                                             <span className="text-gray-500">No Image</span>
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                                 <div className="p-8">
                                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{doctor?.doctorProfile?.operationMode}</div>
                                     <h1 className="flex gap-1 mt-1 text-lg leading-tight font-medium">
                                         <span>{doctor?.doctorProfile?.firstName} {doctor?.doctorProfile?.lastName}</span>
                                         <span className="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
-                                        <span className="flex w-3 h-3 me-3 bg-gray-900 rounded-full dark:bg-gray-700"></span>
+                                        {/* <span className="flex w-3 h-3 me-3 bg-gray-900 rounded-full dark:bg-gray-700"></span> */}
                                     </h1>
                                     <p className="mt-2 text-gray-500">{doctor?.doctorProfile?.bio}</p>
                                     <div className="mt-4">
-                                        <p className="text-sm text-gray-600"><strong>Email:</strong> {email}</p>
+                                        {/* <p className="text-sm text-gray-600"><strong>Email:</strong> {email}</p> */}
                                         {/* <p className="text-sm text-gray-600"><strong>Phone:</strong> {phone}</p> */}
                                         <p className="text-sm text-gray-600"><strong>Charges:</strong> KES.{doctor?.doctorProfile?.hourlyWage}</p>
                                         <div className="mt-4">

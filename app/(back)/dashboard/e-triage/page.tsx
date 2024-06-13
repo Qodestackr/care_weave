@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { Share } from 'lucide-react';
 import { saveTriageData } from "@/actions/triage";
 
-export default function Component() {
+export default function ETriage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen dark:bg-gray-900">
       <main className="flex-1 container mx-auto py-8 px-4 md:px-6">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 md:p-8">
           <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Patient Health Information</h2>
