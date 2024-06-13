@@ -4,16 +4,41 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Label } from '@/components/ui/label';
+import { ArrowDownUp } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HospitalPage() {
 
     return (
         <main className='w-full md:container mx-auto'>
             {/*  */}
-            <h1 className='flex gap-2 justify-start items-center'>
-                <HospitalIcon style={{ strokeWidth: 2 }} className='text-blue-800 dark:text-slate-200' />
-                <span>Coptic Hospital, Nairobi</span>
-            </h1>
+            <div className='flex gap-2 flex-col md:flex-row justify-start md:justify-between items-start md:items-center my-2'>
+                <h1 className='flex gap-2 justify-start items-center my-2'>
+                    <div className='flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full'>
+                        <HospitalIcon className="text-blue-500 dark:text-slate-200 w-8 h-8" />
+                    </div>
+                    <span>Coptic Hospital, Nairobi</span>
+                </h1>
+
+                <div className='flex items-center gap-2'>
+                    <h1 className='flex items-center gap-2'>
+                        <div className="flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-8 md:h-8 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M12 12h.01" />
+                                <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                                <path d="M22 13a18.15 18.15 0 0 1-20 0" />
+                                <rect width="20" height="14" x="2" y="6" rx="2" />
+                            </svg>
+                        </div>
+                        <span className='font-semibold text-slate-700'>Employer Provided Account</span>
+                    </h1>
+                    <Button>
+                        <Link href={'/dashboard/hospital/enrollment'} className=' flex justify-center items-center gap-1'>
+                            <ArrowDownUp className='stroke-1 w-5 h-5 text-sm' /> <span>Switch</span>
+                        </Link>
+                    </Button>
+                </div>
+            </div>
             {/*  */}
             <div>
                 <div>

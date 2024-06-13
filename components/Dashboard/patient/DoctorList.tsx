@@ -8,7 +8,8 @@ import { getDayName } from "@/utils/getDayName";
 import { getFormattedDate } from "@/utils/getFormatedShortDate";
 import Link from 'next/link';
 import { Stethoscope, Video } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
 export default async function DoctorList() {
     const numberOfTherapists = 2;
@@ -72,7 +73,6 @@ export default async function DoctorList() {
 
 
     const _doctors = (await getDoctors()) || [];
-    // console.log(doctors);
     const telhealthDoctors = _doctors.filter(
         (doctor) => doctor.doctorProfile?.operationMode === "Telehealth visit"
     );
@@ -96,29 +96,11 @@ export default async function DoctorList() {
 
     return (
         <div className='mt-10 mx-auto w-full'>
-            {/* <FilterDoctorOptions /> */}
             <h3 className='text-2xl text-center my-4 text-[#00416A] font-thin dark:text-slate-200 dark:font-semibold'>Select a Doctor</h3>
-            {/* {[...Array(numberOfTherapists)].map((_, index) => (
-                <Therapist fullName='Dr. James Gitau' />
-            ))} */}
 
             <div
-                className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1'
+                className='flex justify-between items-center gap-2'
             >
-                {/* 
-                    
-                                            // <DoctorCardX
-                        //     key={index}
-                        //     imgSrc={doctor.imgSrc}
-                        //     fullName={doctor.fullName}
-                        //     specialties={doctor.specialties}
-                        //     rating={doctor.rating}
-                        //     queueCount={doctor.queueCount}
-                        //     timeSlots={doctor.timeSlots}
-                        //     insurances={doctor.insurances}
-                        // />*/}
-
-
                 {telhealthDoctors.map((doctor) => {
                     const { name, email, phone, doctorProfile } = doctor;
                     return (
@@ -126,35 +108,19 @@ export default async function DoctorList() {
                             <div className="md:flex">
                                 <div className="md:flex-shrink-0">
                                     <img className="h-20 w-20 p-3 rounded-full object-cover flex justify-center items-center mx-auto" src={
-                                        //doctor?.doctorProfile?.profilePicture || 
                                         '/male-doctor-standing-with-digital.jpg'}
                                         alt={`${doctor?.name}`} />
-                                    {/* {doctor?.doctorProfile?.profilePicture ? (
-                                        <img className="h-18 w-18 
-                                            rounded-full object-cover" src={doctor?.doctorProfile?.profilePicture || '"/doc/doc5.jpg"'}
-                                            alt={`${doctor?.name}`} />
-                                    ) : (
-                                        <div className="h-18 rounded-full w-18 flex 
-                                            items-center justify-center bg-gray-200">
-                                            <span className="text-gray-500">No Image</span>
-                                        </div>
-                                    )} */}
                                 </div>
                                 <div className="p-8">
                                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{doctor?.doctorProfile?.operationMode}</div>
                                     <h1 className="flex gap-1 mt-1 text-lg leading-tight font-medium">
                                         <span>{doctor?.doctorProfile?.firstName} {doctor?.doctorProfile?.lastName}</span>
                                         <span className="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
-                                        {/* <span className="flex w-3 h-3 me-3 bg-gray-900 rounded-full dark:bg-gray-700"></span> */}
                                     </h1>
                                     <p className="mt-2 text-gray-500">{doctor?.doctorProfile?.bio}</p>
                                     <div className="mt-4">
-                                        {/* <p className="text-sm text-gray-600"><strong>Email:</strong> {email}</p> */}
-                                        {/* <p className="text-sm text-gray-600"><strong>Phone:</strong> {phone}</p> */}
                                         <p className="text-sm text-gray-600"><strong>Charges:</strong> KES.{doctor?.doctorProfile?.hourlyWage}</p>
                                         <div className="mt-4">
-                                            {/* <h2 className="text-sm text-gray-600 font-semibold mb-2">Availability:</h2> */}
-                                            {/* {renderAvailability(doctor?.doctorProfile?.availability)} */}
                                         </div>
                                     </div>
                                 </div>
@@ -163,6 +129,74 @@ export default async function DoctorList() {
                     );
                 })}
             </div>
+            {/*  ... */}
+            <ChooseAHospitalDoctorCard />
+            {/* ... */}
         </div>
+    )
+}
+
+
+
+export function ChooseAHospitalDoctorCard() {
+    return (
+        <Card className="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-900 dark:text-gray-200">
+            <CardHeader className="bg-gray-100 dark:bg-gray-800 p-6">
+                <CardTitle className="text-2xl font-light">Choose a Hospital Doctor</CardTitle>
+                <CardDescription className="text-gray-500 dark:text-gray-400 mt-2">
+                    Get the best care with our trusted hospital doctors for your telemedicine visit.
+                </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-4">
+                        <Avatar>
+                            <AvatarImage src="/placeholder-user.jpg" />
+                            <AvatarFallback>DR</AvatarFallback>
+                        </Avatar>
+                        <div>
+                            <h3 className="font-medium">Dr. Sarah Johnson</h3>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm">Internal Medicine</p>
+                        </div>
+                    </div>
+                    <Button variant="outline" size="sm">
+                        Select
+                    </Button>
+                </div>
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-4">
+                        <Avatar>
+                            <AvatarImage src="/placeholder-user.jpg" />
+                            <AvatarFallback>DR</AvatarFallback>
+                        </Avatar>
+                        <div>
+                            <h3 className="font-medium">Dr. Michael Lee</h3>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm">Family Medicine</p>
+                        </div>
+                    </div>
+                    <Button variant="outline" size="sm">
+                        Select
+                    </Button>
+                </div>
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-4">
+                        <Avatar>
+                            <AvatarImage src="/placeholder-user.jpg" />
+                            <AvatarFallback>DR</AvatarFallback>
+                        </Avatar>
+                        <div>
+                            <h3 className="font-medium">Dr. Emily Chen</h3>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm">Pediatrics</p>
+                        </div>
+                    </div>
+                    <Button variant="outline" size="sm">
+                        Select
+                    </Button>
+                </div>
+            </CardContent>
+            <CardFooter className="bg-gray-100 dark:bg-gray-800 p-6 text-center">
+                <Button className="w-full">Browse All Doctors</Button>
+            </CardFooter>
+        </Card>
     )
 }
