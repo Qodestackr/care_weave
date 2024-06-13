@@ -107,7 +107,6 @@ export default async function RootLayout({
 
       <body className={inter.className}>
         <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-
         <Providers>
           <OnboardingContextProvider>
             <ThemeProvider

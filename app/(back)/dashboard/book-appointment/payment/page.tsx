@@ -44,34 +44,34 @@ export const ConsultationPaymentDetails = ({ doctor, appointment }: any) => {
     const { date, time, type, reason } = appointment;
 
     return (
-        <div className="bg-gray-50 my-2 rounded-lg shadow-md overflow-hidden flex justify-between items-center mx-auto p-4">
-            <div className="flex items-center gap-4">
+        <div className="bg-gray-50 my-2 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row justify-between items-start sm:items-center mx-auto p-4 dark:bg-slate-400 dark:text-white">
+            <div className="flex items-start sm:items-center gap-4 w-full sm:w-auto mb-4 sm:mb-0">
                 <div className="relative">
                     <img
                         src="/doc/doc2.jpg"
-                        alt={name}
+                        alt="Doctor"
                         className="h-12 w-12 rounded-full object-cover shadow-lg"
                     />
                     <div className="absolute inset-0 bg-white opacity-20 rounded-full blur-md"></div>
                 </div>
                 <div>
-                    <h5 className="text-xl font-medium text-gray-900">{name}</h5>
-                    <p className="text-gray-500">{specialization}</p>
+                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">{name}</h5>
+                    <p className="text-gray-500 dark:text-white">{specialization}</p>
                 </div>
             </div>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 w-full sm:w-auto">
                 <div className="flex items-center space-x-2">
                     <Clock className='text-blue-800' />
-
                     <span>{date} - {time}</span>
                 </div>
-                <div className="text-gray-900">
+                <div className="text-gray-900 dark:text-white">
                     <span className="font-medium">Appointment Type:</span> {type}
                 </div>
-                <div className="text-gray-500">
+                <div className="text-gray-500 dark:text-white">
                     <span className="font-medium">Reason for Visit:</span> {reason}
                 </div>
             </div>
         </div>
+
     );
 };
