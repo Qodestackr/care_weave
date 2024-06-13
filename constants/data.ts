@@ -232,6 +232,14 @@ export const navItems: NavItem[] = [
     isChidren: undefined,
     children: undefined,
   },
+  {
+    title: "Hospital Demo",
+    href: "/dashboard/hospital",
+    icon: "kanban",
+    label: "kanban",
+    isChidren: undefined,
+    children: undefined,
+  },
 ];
 
 export const sidebarLinks = [
