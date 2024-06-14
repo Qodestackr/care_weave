@@ -48,7 +48,7 @@ export default function SelectYourHospital() {
                                 This means that your future primary care and Covered SHIF benefits will be tied to this hospital.
                             </p>
 
-                            <Link href={'/dashboard/hospitals/appointment'}>
+                            <Link href={'/dashboard/hospital/book-appointment/flow'}>
                                 <Button type="submit" className="w-full">
                                     <span>Confirm & Proceed </span>
                                     <ArrowRight className="stroke-1" />

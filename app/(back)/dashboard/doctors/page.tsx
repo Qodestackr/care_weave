@@ -6,9 +6,11 @@ import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function DashboardDoctors() {
   return (
-    <div>
-      <DoctorList />
+    <div className="container md:w-2/3 mx-auto">
+      <h3 className='text-2xl text-center my-4 text-[#00416A] font-thin dark:text-slate-200 dark:font-semibold'>Select a Doctor</h3>
+
       <SearchFiltersModal />
+      <DoctorList />
 
       {/*  */}
       <Card>
@@ -17,33 +19,6 @@ export default function DashboardDoctors() {
             Create a shareable link for your virtual appointment.
           </CardTitle>
         </CardHeader>
-
-        {/* <CardContent>
-          <div>
-            <Label htmlFor="linkOutput" className="block text-sm font-medium text-gray-700">
-              Shareable Link
-            </Label>
-            <div className="mt-1 relative rounded-md shadow-sm">
-              <Textarea
-                id="linkOutput"
-                rows={2}
-                className="block w-full pr-10 sm:text-sm rounded-md border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                readOnly
-              >
-                https://afyatelemed.org/patient/123456
-              </Textarea>
-              <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                <Button
-                  type="button"
-                  className="inline-flex justify-center py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  <CopyIcon className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </CardContent> */}
-
         <CardFooter>
           <Button className="w-full">Generate Link</Button>
           <Button
@@ -55,7 +30,6 @@ export default function DashboardDoctors() {
             <span className="sr-only">Copy link</span>
           </Button>
         </CardFooter>
-
       </Card>
       {/*  */}
     </div>

@@ -230,9 +230,9 @@ export default function AppointmentPaymentMethod() {
             <br />
             Please enter the name listed on your insurance card.
           </span>
-          <Button className="px-2 py-7 w-full sm:w-1/2 font-light">
+          {/* <Button className="px-2 py-7 w-full sm:w-1/2 font-light">
             <Link href={"/dashboard/book-appointment/book"}>Add NHIF</Link>
-          </Button>
+          </Button> */}
         </div>
       )}
 

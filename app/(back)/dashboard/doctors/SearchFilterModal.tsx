@@ -11,7 +11,7 @@ export default function SearchFilterModal() {
     return (
         <Dialog defaultOpen>
             <DialogTrigger asChild>
-                <Button variant="outline" className="my-4">Find a Doctor</Button>
+                <Button variant="outline" className="my-4">Apply Seach to Find a Doctor</Button>
             </DialogTrigger>
             <DialogContent className="">
                 <DialogHeader>
@@ -21,7 +21,8 @@ export default function SearchFilterModal() {
                     <div className="grid gap-2">
                         <div className="flex items-center gap-2">
                             <MapPinIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                            <span className="font-medium">State of Residence</span>
+                            <span className="font-medium">Country of Residence</span>
+                            <span className="text-[11px]">This will help us filter results</span>
                         </div>
                         <Select>
                             <SelectTrigger className="h-auto">
@@ -29,17 +30,26 @@ export default function SearchFilterModal() {
                                     placeholder={
                                         <div className="flex items-center gap-2">
                                             <MapPinIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                                            <span>Select State</span>
+                                            <span>Select a County</span>
                                         </div>
                                     }
                                 />
                             </SelectTrigger>
                             <SelectContent>
-                                <SelectItem value="CA">California</SelectItem>
-                                <SelectItem value="NY">New York</SelectItem>
-                                <SelectItem value="TX">Texas</SelectItem>
-                                <SelectItem value="FL">Florida</SelectItem>
+                                <SelectItem value="Nairobi">Nairobi</SelectItem>
+                                <SelectItem value="Mombasa">Mombasa</SelectItem>
+                                <SelectItem value="Kisumu">Kisumu</SelectItem>
+                                <SelectItem value="Nakuru">Nakuru</SelectItem>
+                                <SelectItem value="Uasin Gishu">Uasin Gishu</SelectItem>
+                                <SelectItem value="Kiambu">Kiambu</SelectItem>
+                                <SelectItem value="Kakamega">Kakamega</SelectItem>
+                                <SelectItem value="Machakos">Machakos</SelectItem>
+                                <SelectItem value="Meru">Meru</SelectItem>
+                                <SelectItem value="Bungoma">Bungoma</SelectItem>
+                                <SelectItem value="Kajiado">Kajiado</SelectItem>
+                                <SelectItem value="Murang'a">Murang'a</SelectItem>
                             </SelectContent>
+
                         </Select>
                     </div>
                     <div className="grid gap-2">

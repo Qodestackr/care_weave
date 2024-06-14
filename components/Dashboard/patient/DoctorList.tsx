@@ -96,42 +96,42 @@ export default async function DoctorList() {
 
     return (
         <div className='mt-10 mx-auto w-full'>
-            <h3 className='text-2xl text-center my-4 text-[#00416A] font-thin dark:text-slate-200 dark:font-semibold'>Select a Doctor</h3>
-
-            <div
-                className='flex justify-between items-center gap-2'
-            >
-                {telhealthDoctors.map((doctor) => {
-                    const { name, email, phone, doctorProfile } = doctor;
-                    return (
-                        <Link href={`/doctors/${doctor.slug}`} key={doctor.id} className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-4 dark:bg-slate-700 dark:text-slate-50">
-                            <div className="md:flex">
-                                <div className="md:flex-shrink-0">
-                                    <img className="h-20 w-20 p-3 rounded-full object-cover flex justify-center items-center mx-auto" src={
-                                        '/male-doctor-standing-with-digital.jpg'}
-                                        alt={`${doctor?.name}`} />
-                                </div>
-                                <div className="p-8">
-                                    <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{doctor?.doctorProfile?.operationMode}</div>
-                                    <h1 className="flex gap-1 mt-1 text-lg leading-tight font-medium">
-                                        <span>{doctor?.doctorProfile?.firstName} {doctor?.doctorProfile?.lastName}</span>
-                                        <span className="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
-                                    </h1>
-                                    <p className="mt-2 text-gray-500">{doctor?.doctorProfile?.bio}</p>
-                                    <div className="mt-4">
-                                        <p className="text-sm text-gray-600"><strong>Charges:</strong> KES.{doctor?.doctorProfile?.hourlyWage}</p>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 justify-center">
+                {/*  ... */}
+                <ChooseAHospitalDoctorCard />
+                {/* ... */}
+                <div
+                    className='flex justify-between items-center gap-2'
+                >
+                    {telhealthDoctors.map((doctor) => {
+                        const { name, email, phone, doctorProfile } = doctor;
+                        return (
+                            <Link href={`/doctors/${doctor.slug}`} key={doctor.id} className="h-full max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-4 dark:bg-slate-700 dark:text-slate-50">
+                                <div className="md:flex">
+                                    <div className="md:flex-shrink-0">
+                                        <img className="h-20 w-20 p-3 rounded-full object-cover flex justify-center items-center mx-auto" src={
+                                            '/male-doctor-standing-with-digital.jpg'}
+                                            alt={`${doctor?.name}`} />
+                                    </div>
+                                    <div className="p-8">
+                                        <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{doctor?.doctorProfile?.operationMode}</div>
+                                        <h1 className="flex gap-1 mt-1 text-lg leading-tight font-medium">
+                                            <span>{doctor?.doctorProfile?.firstName} {doctor?.doctorProfile?.lastName}</span>
+                                            <span className="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
+                                        </h1>
+                                        <p className="mt-2 text-gray-500">{doctor?.doctorProfile?.bio}</p>
                                         <div className="mt-4">
+                                            <p className="text-sm text-gray-600"><strong>Charges:</strong> KES.{doctor?.doctorProfile?.hourlyWage}</p>
+                                            <div className="mt-4">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
-                    );
-                })}
+                            </Link>
+                        );
+                    })}
+                </div>
             </div>
-            {/*  ... */}
-            <ChooseAHospitalDoctorCard />
-            {/* ... */}
         </div>
     )
 }
@@ -140,14 +140,15 @@ export default async function DoctorList() {
 
 export function ChooseAHospitalDoctorCard() {
     return (
-        <Card className="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-900 dark:text-gray-200">
-            <CardHeader className="bg-gray-100 dark:bg-gray-800 p-6">
-                <CardTitle className="text-2xl font-light">Choose a Hospital Doctor</CardTitle>
-                <CardDescription className="text-gray-500 dark:text-gray-400 mt-2">
+        <Card className="w-full max-w-md bg-gray-100 shadow-lg rounded-lg overflow-hidden dark:bg-gray-900 dark:text-gray-200 h-full">
+            <CardHeader className="bg-gray-100 dark:bg-gray-800 p-4">
+                <CardTitle className="text-xl font-light">Choose a Hospital Doctor</CardTitle>
+                <CardDescription className="text-gray-500 text-[14px] dark:text-gray-400 mt-2">
                     Get the best care with our trusted hospital doctors for your telemedicine visit.
                 </CardDescription>
             </CardHeader>
-            <CardContent className="p-6">
+
+            {/* <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-4">
                         <Avatar>
@@ -199,10 +200,10 @@ export function ChooseAHospitalDoctorCard() {
                         </Button>
                     </Link>
                 </div>
-            </CardContent>
-            <CardFooter className="bg-gray-100 dark:bg-gray-800 p-6 text-center">
+            </CardContent> */}
+            <CardFooter className="bg-gray-100 dark:bg-gray-800 p-4 text-center">
                 <Link href={'/dashboard/hospital/doctors'}>
-                    <Button className="w-full">Browse All Doctors</Button>
+                    <Button className="w-full">Browse All Hospital Doctors</Button>
                 </Link>
             </CardFooter>
         </Card>

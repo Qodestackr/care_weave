@@ -6,16 +6,16 @@ import { RadioGroup, RadioGroupItem } from "../ui/radio-group"
 export default function WhoVisitFor() {
     return (
         <section
-            className="flex justify-center items-center mx-auto py-12 md:py-16"
+            className="flex justify-center items-center mx-auto p-4"
         >
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <Card className="flex flex-col items-center justify-center p-6 text-center">
-                    <div className="mb-4">
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 justify-center">
+                <Card className="flex flex-col items-center justify-center p-2 text-center">
+                    <div className="mb-2">
                         <UserIcon className="h-10 w-10 text-gray-500 dark:text-gray-400" />
                     </div>
-                    <h3 className="text-lg font-medium">Self</h3>
-                    <p className="mt-2 text-gray-500 dark:text-gray-400">The consultation is for yourself.</p>
-                    <RadioGroup className="mt-4 flex items-center gap-4" defaultValue="self" name="consultation-for">
+                    <h3 className="text-lg font-light md:font-medium">Self</h3>
+                    <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm">The consultation is for yourself.</p>
+                    <RadioGroup className="mt-2 flex items-center gap-2" defaultValue="self" name="consultation-for">
                         <RadioGroupItem className="peer sr-only" id="self" value="self" />
                         <Label
                             className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-50"
@@ -26,17 +26,17 @@ export default function WhoVisitFor() {
                     </RadioGroup>
                 </Card>
 
-                <Card className="flex flex-col items-center justify-center p-6 text-center">
+                <Card className="flex flex-col items-center justify-center text-center">
                     <CardContent>
-                        <div className="mb-4">
+                        <div className="mb-1">
                             <UsersIcon className="h-10 w-10 text-gray-500 dark:text-gray-400" />
                         </div>
-                        <h3 className="text-lg font-medium">Other Family Member</h3>
-                        <p className="mt-2 text-gray-500 dark:text-gray-400">The consultation is for another family member.</p>
-                        <RadioGroup className="mt-4 flex items-center gap-4" defaultValue="other" name="consultation-for">
+                        <h3 className="text-md font-light md:font-medium">Other Family Member</h3>
+                        <p className="mt-1 text-gray-500 dark:text-gray-400 text-sm">The consultation is for another family member.</p>
+                        <RadioGroup className="mt-2 flex items-center gap-2" defaultValue="other" name="consultation-for">
                             <RadioGroupItem className="peer sr-only" id="other" value="other" />
                             <Label
-                                className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-50"
+                                className="inline-flex cursor-pointer items-center gap-1 rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-50"
                                 htmlFor="other"
                             >
                                 Select

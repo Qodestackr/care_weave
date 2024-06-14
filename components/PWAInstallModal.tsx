@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { JSX, SVGProps } from "react";
-import { Microscope } from 'lucide-react';
+import { Download, } from 'lucide-react';
 
 ////
 interface BeforeInstallPromptEvent extends Event {
@@ -66,9 +66,9 @@ export default function PWAInstallModal() {
         !isInstalled && (
             <Dialog defaultOpen={showModal}>
                 <DialogTrigger asChild>
-                    <Button variant="outline" className='font-thin text-md'>
-                        <Microscope className="h-6 w-6" />
-                        <span>Install AfyaTelelemed App</span>
+                    <Button variant="outline" className='font-light text-md'>
+                        <Download className="h-5 w-5 mx-1 stroke-1 text-slate-800" />
+                        <span className='text-slate-800'>Install App</span>
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="w-[300px]">

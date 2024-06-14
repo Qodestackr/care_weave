@@ -43,11 +43,14 @@ export default function BookPage() {
 
         })();
     }, [router])
-    
     return (
-        <>
+        <ScrollArea className='container mt-6 mx-auto h-[90vh]'>
             <ConsultationPaymentDetails doctor={doctor} appointment={appointment} />
-            {/* <ExternalCalForState /> */}
+
+            {/* <ExternalCalForState 
+            
+            
+            /> */}
             <Cal
                 calLink="wilson-gichu-wre1gj/30min"
                 style={{ width: "100%", height: "100%", overflow: "scroll" }}
@@ -58,6 +61,6 @@ export default function BookPage() {
                     guests: ["janedoe@gmail.com"],
                 }}
             />
-        </>
+        </ScrollArea>
     )
 }

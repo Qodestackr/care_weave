@@ -393,7 +393,7 @@ export default function HospitalPage() {
                     {/*  */}
                     <section className='bg-slate-100 shadow-lg my-4 rounded p-4'>
                         <div className="flex items-center justify-between">
-                            <h2 className="text-xl font-normal">Recent Activity</h2>
+                            <h2 className="text-xl font-normal">Your Recent Activity</h2>
                             <Button variant="outline" size="sm">
                                 View All
                             </Button>
@@ -403,35 +403,46 @@ export default function HospitalPage() {
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h3 className="text-lg font-light">New Patient Registered</h3>
-                                            <p className="text-gray-500 dark:text-gray-400">June 12, 2023</p>
+                                            <h3 className="text-md font-light">New Registered Appointment</h3>
+                                            <p className="text-gray-500 text-sm dark:text-gray-400">June 15, <span>20:14 {'PM'}</span></p>
                                         </div>
-                                        <Badge>Completed</Badge>
+                                        <Badge className='bg-green-600 text-white'>Completed</Badge>
                                     </div>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="grid gap-2">
-                                        <div>
-                                            <h4 className="text-base font-light">Patient Details</h4>
-                                            <p className="text-gray-500 dark:text-gray-400">
-                                                Name: Jane Doe
-                                                <br />
-                                                Age: 35
-                                                <br />
-                                                Email: jane@example.com
-                                            </p>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <Button variant="outline" size="sm">
-                                                View Details
-                                            </Button>
-                                            <Button variant="outline" size="sm">
-                                                Edit
-                                            </Button>
-                                        </div>
+                                    <div className="flex items-center gap-2 text-sm font-light">
+                                        <Button variant="outline" size="sm">
+                                            View Details
+                                        </Button>
+                                        <Button variant="outline" size="sm">
+                                            Edit
+                                        </Button>
                                     </div>
                                 </CardContent>
                             </Card>
+                            {/*  */}
+                            <Card>
+                                <CardHeader>
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <h3 className="text-md font-light">You have a done Lab Request</h3>
+                                            <p className="text-gray-500 text-sm dark:text-gray-400">June 15, <span>20:14 {'PM'}</span></p>
+                                        </div>
+                                        <Badge className='bg-green-600 text-white'>Lab Result</Badge>
+                                    </div>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="flex items-center gap-2 text-sm font-light">
+                                        <Button variant="outline" size="sm">
+                                            View Details
+                                        </Button>
+                                        <Button variant="outline" size="sm">
+                                            Edit
+                                        </Button>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                            {/*  */}
                         </div>
                     </section>
                 </div>
