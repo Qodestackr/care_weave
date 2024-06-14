@@ -22,7 +22,7 @@ export default async function DoctorList() {
             rating: 4.5,
             queueCount: 5,
             timeSlots: ['10:00 AM', '11:00 AM', '1:00 PM', '3:00 PM'],
-            insurances: ['NHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
+            insurances: ['SHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
         },
         {
             imgSrc: "/doc/doc9.jpg",
@@ -31,7 +31,7 @@ export default async function DoctorList() {
             rating: 4.5,
             queueCount: 9,
             timeSlots: ['10:00 AM', '11:00 AM', '1:00 PM', '3:00 PM'],
-            insurances: ['NHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
+            insurances: ['SHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
         },
         {
             imgSrc: "/doc/doc2.jpg",
@@ -40,7 +40,7 @@ export default async function DoctorList() {
             rating: 4.5,
             queueCount: 14,
             timeSlots: ['10:00 AM', '11:00 AM', '1:00 PM', '3:00 PM'],
-            insurances: ['NHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
+            insurances: ['SHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
         },
         {
             imgSrc: "/nurse-holding-table-computer.jpg",
@@ -49,7 +49,7 @@ export default async function DoctorList() {
             rating: 4.5,
             queueCount: 3,
             timeSlots: ['10:00 AM', '11:00 AM', '1:00 PM', '3:00 PM'],
-            insurances: ['NHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
+            insurances: ['SHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
         },
         {
             imgSrc: "/doc/doc2.jpg",
@@ -58,7 +58,7 @@ export default async function DoctorList() {
             rating: 4.5,
             queueCount: 14,
             timeSlots: ['10:00 AM', '11:00 AM', '1:00 PM', '3:00 PM'],
-            insurances: ['NHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
+            insurances: ['SHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
         },
         {
             imgSrc: "/nurse-holding-table-computer.jpg",
@@ -67,7 +67,7 @@ export default async function DoctorList() {
             rating: 4.5,
             queueCount: 3,
             timeSlots: ['10:00 AM', '11:00 AM', '1:00 PM', '3:00 PM'],
-            insurances: ['NHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
+            insurances: ['SHIF', 'Jubilee', 'APA', 'AAR', 'Madison Group']
         }
     ];
 

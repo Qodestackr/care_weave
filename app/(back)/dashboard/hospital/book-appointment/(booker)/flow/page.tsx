@@ -155,7 +155,7 @@ const FinalStep = () => {
     }
 
     setTimeout(() => {
-        router.push('/dashboard/meeting'); // move patient/user to the virtual lobby ... 
+        router.push('/dashboard/hospital/waiting-lobby'); // move patient/user to the virtual lobby ... 
     }, 3000)
 
     setTimeout(() => {

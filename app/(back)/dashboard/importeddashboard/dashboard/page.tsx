@@ -83,7 +83,7 @@ export default async function DashboardMain() {
         priority: "High",
         patient_gender: "male",
         patient_dob: "1903-03-30T00:00:00",
-        insurance_scheme: "NHIF",
+        insurance_scheme: "SHIF",
         country: "Kenya",
         email: "timothy.mwaurz.10@gmail.com",
         phone: "615-244-8902",

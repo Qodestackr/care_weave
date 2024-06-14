@@ -38,17 +38,8 @@ export function ImagesSliderDemo() {
                     <Hero />
 
                     <div className="bg-opacity-60 bg-transparent ">
-                        <h1 className="text-2xl font-light mb-4 text-white">
-                            {/* Your Health Journey, Reinvented. */}
-                            Build a thriving practice with AfyaTelemed.
-                            {/* 
-                            Build a thriving practice with AfyaTelemed.
-                            */}
-                        </h1>
-                        <h2 className="text-md mb-4 text-white">
-                            {/* Access premium healthcare from your palm. */}
-                            Your personal doctor, one tap away.
-                        </h2>
+                        <h1 className="text-3xl font-light mb-4 text-white">Your Health Journey, Reinvented.</h1>
+                        <h2 className="text-md mb-4 text-white">Access premium healthcare from your palm.</h2>
                         <Button className="bg-white text-slate-800 hover:text-slate-700 hover:bg-white py-2 px-4 rounded-full mb-4 w-full">
                             Sign up with Google
                         </Button>

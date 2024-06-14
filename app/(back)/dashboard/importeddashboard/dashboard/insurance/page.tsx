@@ -127,8 +127,8 @@ const PatientServiceDetail = () => {
                 <div className="mt-4">
                     <p><span className="font-semibold">Total Service Amount:</span> {totals.totalServiceAmount.toFixed(2)}</p>
                     <p><span className="font-semibold">Medicine Returns:</span> {totals.medicineReturns.toFixed(2)}</p>
-                    <p><span className="font-semibold">NHIF Relief:</span> {totals.nhifRelief.toFixed(2)}</p>
-                    <p><span className="font-semibold">NHIF CARD No.:</span> {totals.nhifCardNumber}</p>
+                    <p><span className="font-semibold">SHIF Relief:</span> {totals.nhifRelief.toFixed(2)}</p>
+                    <p><span className="font-semibold">SHIF CARD No.:</span> {totals.nhifCardNumber}</p>
                     <p><span className="font-semibold">Claim No.:</span> {totals.claimNumber}</p>
                     <p className="text-xl font-bold mt-2"><span className="font-semibold">Net Service Amount:</span> KES. {totals.netServiceAmount.toFixed(2)}</p>
 

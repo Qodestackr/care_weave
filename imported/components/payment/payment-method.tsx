@@ -48,7 +48,7 @@ export default function AppointmentPaymentMethod() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Image src={"/insurance-001.png"} alt="pay afyamed payment" width={34} height={48} />
-              <span className="text-lg font-light">NHIF</span>
+              <span className="text-lg font-light">SHIF</span>
             </div>
             <div className="rounded-full bg-gray-100 p-2 transition-colors dark:bg-gray-800">
               <CheckCircle className={`h-5 w-5 ${selectedMethod === "insurance" ? "text-green-700" : "text-gray-500"} transition-colors dark:text-gray-400`} />
@@ -231,7 +231,7 @@ export default function AppointmentPaymentMethod() {
             Please enter the name listed on your insurance card.
           </span>
           {/* <Button className="px-2 py-7 w-full sm:w-1/2 font-light">
-            <Link href={"/dashboard/book-appointment/book"}>Add NHIF</Link>
+            <Link href={"/dashboard/book-appointment/book"}>Add SHIF</Link>
           </Button> */}
         </div>
       )}

@@ -299,6 +299,7 @@ export default function HospitalPage() {
                                         <Badge>Confirmed</Badge>
                                     </div>
                                 </CardHeader>
+
                                 <CardContent>
                                     <div className="grid gap-2">
                                         <div>
@@ -313,14 +314,20 @@ export default function HospitalPage() {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Button variant="outline" size="sm">
-                                                View Details
+
+                                                <Link href={'/dashboard/hospital/patient'}>
+                                                    View Details
+                                                </Link>
                                             </Button>
                                             <Button variant="outline" size="sm">
-                                                Reschedule
+                                                <Link href={'/dashboard/hospital/patient'}>
+                                                    Reschedule
+                                                </Link>
                                             </Button>
                                         </div>
                                     </div>
                                 </CardContent>
+
                             </Card>
                             <Card>
                                 <CardHeader>
@@ -341,15 +348,17 @@ export default function HospitalPage() {
                                                 <br />
                                                 Time: 10:00 AM
                                                 <br />
-                                                Provider: Dr. John Doe
+                                                Provider: Dr. Geoge Sibuti
                                             </p>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Button variant="outline" size="sm">
-                                                View Details
+                                                <Link href={'/dashboard/hospital/patient'}>View Details</Link>
                                             </Button>
                                             <Button variant="outline" size="sm">
-                                                Reschedule
+                                                <Link href={'/dashboard/hospital/patient'}>
+                                                    Reschedule
+                                                </Link>
                                             </Button>
                                         </div>
                                     </div>
@@ -379,10 +388,14 @@ export default function HospitalPage() {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <Button variant="outline" size="sm">
-                                                View Details
+                                                <Link href={'/dashboard/hospital/patient'}>
+                                                    View Details
+                                                </Link>
                                             </Button>
                                             <Button variant="outline" size="sm">
-                                                Reschedule
+                                                <Link href={'/dashboard/hospital/patient'}>
+                                                    Reschedule
+                                                </Link>
                                             </Button>
                                         </div>
                                     </div>
