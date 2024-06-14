@@ -24,14 +24,15 @@ export default async function Page() {
   }
 
   if (role === "USER") {
-
     return (
       <>
+
+        {/* // ASK: HOW ARE WE GOING TO AUTOMATE THE SHIF NUMBER AND PATIENT'S HOSPITAL? 
         Preferred Hospital
         Preferred Pharmacy
         // TODO: SELECT A HOSPITAL CARD
         // TODO: LOAD HOSPITALS AND ALLOW SELECTION AS PER SHIF REGISTRATION
-        {/* // ASK: HOW ARE WE GOING TO AUTOMATE THE SHIF NUMBER AND PATIENT'S HOSPITAL? */}
+        */}
         {/* // WILL SHIF MAINTAIN THIS KIND OF DB MODEL MAPPINGS? */}
         <PatientDashboard searchParams={{}} />
       </>
@@ -55,9 +56,8 @@ export default async function Page() {
   }
 
   return (
-    <ScrollArea className='container mt-10 mx-auto h-[90vh]'>
+    <>
       <Dashboard />
-    </ScrollArea>
+    </>
   );
-
 }
