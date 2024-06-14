@@ -5,6 +5,7 @@
 // import MegaMenu from "@/components/Frontend/MegaMenu";
 // import TabbedSection from "@/components/Frontend/TabbedSection";
 import { ImagesSliderDemo } from "@/imported/components/ImagesSlider";
+// import OnlineCheck from "./OnlineCheck";
 
 export default async function Home() {
   // const doctors = (await getDoctors()) || [];
@@ -17,7 +18,10 @@ export default async function Home() {
   // console.log(inpersonDoctors);
 
   return (
-    <ImagesSliderDemo />
-    // {/* <DoctorsList doctors={telhealthDoctors} /> */ }
+    <>
+      {/* <OnlineCheck /> */}
+      <ImagesSliderDemo />
+      {/* <DoctorsList doctors={telhealthDoctors} /> */}
+    </>
   );
 }

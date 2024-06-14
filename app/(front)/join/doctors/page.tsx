@@ -8,7 +8,7 @@ import React from "react";
 
 export default function Page() {
   const features = [
-    "Medic brings patients to you",
+    "Bringing patients closer to providers",
     "Seamless e-prescribing experience",
     "Integrated clinical note-taking",
   ];

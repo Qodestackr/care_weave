@@ -6,6 +6,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { Label } from '@/components/ui/label';
 import { ArrowDownUp } from 'lucide-react';
 import Link from 'next/link';
+import HospitalActionCards from './HospitalActionCards';
 
 export default function HospitalPage() {
 
@@ -19,7 +20,6 @@ export default function HospitalPage() {
                     </div>
                     <span>Coptic Hospital, Nairobi</span>
                 </h1>
-
                 <div className='flex items-center gap-2'>
                     <h1 className='flex items-center gap-2'>
                         <div className="flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full">
@@ -39,6 +39,8 @@ export default function HospitalPage() {
                     </Button>
                 </div>
             </div>
+            {/*  */}
+            <HospitalActionCards />
             {/*  */}
             <div>
                 <div>

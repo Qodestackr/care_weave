@@ -24,6 +24,7 @@ import MultipleFileUpload, { FileProps } from "./FormInputs/MultipleFileUpload";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { createAppointment } from "@/actions/appointments";
+import PatientChildDetailsCard from "./PatientChildDetailsCard";
 export default function DoctorDetails({ doctor }: { doctor: DoctorDetail }) {
   const [isActive, setIsActive] = useState("availability");
   const { data: session } = useSession();
@@ -291,6 +292,10 @@ export default function DoctorDetails({ doctor }: { doctor: DoctorDetail }) {
                   errors={errors}
                   placeholder="Enter appointment Reason"
                 />
+
+                {/*  */}
+                <PatientChildDetailsCard />
+                {/*  */}
 
                 <MultipleFileUpload
                   label="Medical Documents"

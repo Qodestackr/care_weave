@@ -87,7 +87,7 @@ export default function RegisterWithBg({
       <div className="flex items-center justify-center py-6">
         <div className="mx-auto grid w-[350px] gap-6">
           <p className="text-balance text-muted-foreground">
-            Enter your information to create an account
+            Account Type
           </p>
 
           <div className="w-full grid grid-cols-1 gap-2">
@@ -96,7 +96,7 @@ export default function RegisterWithBg({
               className={`flex items-center justify-center w-full p-6 ${isPatient ? 'bg-green-600' : 'bg-gray-600'} text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 ${isPatient ? 'focus:ring-green-500' : 'focus:ring-blue-500'} focus:ring-offset-2 dark:${isPatient ? 'bg-green-500' : 'bg-blue-500'} dark:focus:ring-green-600`}
             >
               <UserIcon className="mr-2 h-5 w-5" />
-              <span>I need Care</span>
+              <span>Get Service Care</span>
             </Button>
             <Button
               onClick={handleProviderSignup}
@@ -221,7 +221,7 @@ export default function RegisterWithBg({
                 />
 
                 <SubmitButton
-                  title="SignUp for Care Services"
+                  title="Get Service Care"
                   isLoading={isLoading}
                   loadingTitle="Creating Account please wait..."
                 />

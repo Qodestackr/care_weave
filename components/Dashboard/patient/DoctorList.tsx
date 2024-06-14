@@ -159,9 +159,11 @@ export function ChooseAHospitalDoctorCard() {
                             <p className="text-gray-500 dark:text-gray-400 text-sm">Internal Medicine</p>
                         </div>
                     </div>
-                    <Button variant="outline" size="sm">
-                        Select
-                    </Button>
+                    <Link href={'/dashboard/hospital/doctors'}>
+                        <Button variant="outline" size="sm">
+                            Select
+                        </Button>
+                    </Link>
                 </div>
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-4">
@@ -174,9 +176,11 @@ export function ChooseAHospitalDoctorCard() {
                             <p className="text-gray-500 dark:text-gray-400 text-sm">Family Medicine</p>
                         </div>
                     </div>
-                    <Button variant="outline" size="sm">
-                        Select
-                    </Button>
+                    <Link href={'/dashboard/hospital/doctors'}>
+                        <Button variant="outline" size="sm">
+                            Select
+                        </Button>
+                    </Link>
                 </div>
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-4">
@@ -189,13 +193,17 @@ export function ChooseAHospitalDoctorCard() {
                             <p className="text-gray-500 dark:text-gray-400 text-sm">Pediatrics</p>
                         </div>
                     </div>
-                    <Button variant="outline" size="sm">
-                        Select
-                    </Button>
+                    <Link href={'/dashboard/hospital/doctors'}>
+                        <Button variant="outline" size="sm">
+                            Select
+                        </Button>
+                    </Link>
                 </div>
             </CardContent>
             <CardFooter className="bg-gray-100 dark:bg-gray-800 p-6 text-center">
-                <Button className="w-full">Browse All Doctors</Button>
+                <Link href={'/dashboard/hospital/doctors'}>
+                    <Button className="w-full">Browse All Doctors</Button>
+                </Link>
             </CardFooter>
         </Card>
     )
