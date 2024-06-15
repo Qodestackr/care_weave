@@ -9,7 +9,6 @@ import Link from 'next/link';
 import HospitalActionCards from './HospitalActionCards';
 
 export default function HospitalPage() {
-
     return (
         <main className='w-full md:container mx-auto'>
             {/*  */}
@@ -304,12 +303,11 @@ export default function HospitalPage() {
                                     <div className="grid gap-2">
                                         <div>
                                             <h4 className="text-base font-light">Appointment Details</h4>
-                                            <p className="text-gray-500 dark:text-gray-400">
-                                                Date: June 15, 2023
+                                            <p className="text-gray-500 dark:text-gray-400 text-sm">
+                                                Date: June 15, 2024
                                                 <br />
                                                 Time: 2:00 PM
-                                                <br />
-                                                Provider: Dr. Jane Smith
+
                                             </p>
                                         </div>
                                         <div className="flex items-center gap-2">
@@ -334,7 +332,7 @@ export default function HospitalPage() {
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h3 className="text-lg font-light">Jane Doe</h3>
-                                            <p className="text-gray-500 dark:text-gray-400">Patient ID: 67890</p>
+                                            <p className="text-gray-500 dark:text-gray-400 text-sm">Patient ID: 67890</p>
                                         </div>
                                         <Badge>Pending</Badge>
                                     </div>
@@ -343,12 +341,11 @@ export default function HospitalPage() {
                                     <div className="grid gap-2">
                                         <div>
                                             <h4 className="text-base font-light">Appointment Details</h4>
-                                            <p className="text-gray-500 dark:text-gray-400">
-                                                Date: June 17, 2023
+                                            <p className="text-gray-500 dark:text-gray-400 text-sm">
+                                                Date: June 17, 2024
                                                 <br />
                                                 Time: 10:00 AM
                                                 <br />
-                                                Provider: Dr. Geoge Sibuti
                                             </p>
                                         </div>
                                         <div className="flex items-center gap-2">
@@ -379,11 +376,9 @@ export default function HospitalPage() {
                                         <div>
                                             <h4 className="text-base font-light">Appointment Details</h4>
                                             <p className="text-gray-500 dark:text-gray-400">
-                                                Date: June 20, 2023
+                                                Date: June 20, 2024
                                                 <br />
                                                 Time: 3:30 PM
-                                                <br />
-                                                Provider: Dr. Jane Doe
                                             </p>
                                         </div>
                                         <div className="flex items-center gap-2">

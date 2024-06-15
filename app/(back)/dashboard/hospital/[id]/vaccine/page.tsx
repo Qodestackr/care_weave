@@ -8,25 +8,25 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { JSX, SVGProps } from "react";
+import MoreOnVaccines from "./MoreOnVaccines";
+import YetAnotherPatientDashboard_ from "./YetAnotherPatientDashboard_";
 
 export default function ViewVaccinePatient() {
     return (
         <div className="flex flex-col w-full min-h-screen">
+
+            {/* ((((((((((((((((((((())))))))))))))))))))) */}
+            <YetAnotherPatientDashboard_ />
+            {/* ((((((((((((((((((((())))))))))))))))))))) */}
+
             <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
-                <Link href="#" className="flex items-center gap-2 text-lg font-semibold sm:text-base mr-4" prefetch={false}>
-                    <SyringeIcon className="w-6 h-6" />
-                    <span className="sr-only">Kenyan Vaccine Management</span>
-                </Link>
                 <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
                     <Link href="#" className="font-bold text-sm" prefetch={false}>
                         Hospital | Practitioner
                     </Link>
-                    {/* <Link href="#" className="text-gray-500 dark:text-gray-400" prefetch={false}>
-                        Patient
-                    </Link> */}
                 </nav>
-
             </header>
+
             <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
                 <div className="max-w-6xl w-full mx-auto grid gap-2">
                     <h1 className="font-semibold text-3xl">Practitioner Dashboard</h1>
@@ -84,8 +84,8 @@ export default function ViewVaccinePatient() {
                                         <AvatarFallback>JD</AvatarFallback>
                                     </Avatar>
                                     <div>
-                                        <h3 className="font-semibold">John Doe</h3>
-                                        <p className="text-gray-500 dark:text-gray-400">Patient ID: 12345</p>
+                                        <h3 className="font-semibold">Joan Wangari</h3>
+                                        <p className="text-gray-500 text-sm dark:text-gray-400">Patient ID: 12345</p>
                                     </div>
                                 </div>
                                 <Table>
@@ -121,12 +121,12 @@ export default function ViewVaccinePatient() {
             </main>
             <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
                 <div className="max-w-6xl w-full mx-auto grid gap-2">
-                    <h1 className="font-semibold text-3xl">Patient Dashboard</h1>
+                    <h1 className="font-light text-xl">Patient Dashboard</h1>
                 </div>
                 <div className="grid gap-6 max-w-6xl w-full mx-auto">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Create a Vaccine Appointment Booking For the Patient</CardTitle>
+                            <CardTitle className="text-md">Create a Vaccine Appointment For the Patient</CardTitle>
                             <CardDescription>
                                 Start a Schedule
                                 {/* Schedule and manage your vaccine appointments. */}
@@ -232,6 +232,7 @@ export default function ViewVaccinePatient() {
                     </Card>
                 </div>
             </main>
+            <MoreOnVaccines />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 // "use client";
 import { Card } from "@/components/ui/card"
+import { SyringeIcon } from "lucide-react"
 import Link from "next/link"
 import { JSX, SVGProps } from "react"
 
@@ -31,6 +32,16 @@ export default function HospitalActionCards() {
                         <h3 className="text-xl font-semibold">Create Tests</h3>
                         <p className="text-gray-500 dark:text-gray-400 text-sm">
                             Effortlessly order and manage diagnostic tests for your patients.
+                        </p>
+                    </Link>
+                </Card>
+
+                <Card className="flex flex-col items-start gap-2 rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
+                    <Link href={'/dashboard/hospital/id/vaccine'}>
+                        <SyringeIcon className="h-10 w-10 text-gray-900 dark:text-gray-50 stroke-1" />
+                        <h3 className="text-xl font-semibold">Manage Vaccines</h3>
+                        <p className="text-gray-500 dark:text-gray-400 text-sm">
+                            Vaccines feature coming soon..
                         </p>
                     </Link>
                 </Card>
