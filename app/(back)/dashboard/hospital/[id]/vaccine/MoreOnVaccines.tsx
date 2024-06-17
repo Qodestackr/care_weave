@@ -7,6 +7,71 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { JSX, SVGProps } from "react";
 import Link from "next/link";
+import QRCodeGen from "@/components/QRCodeGen";
+import { Timeline } from "@/components/ui/timeline/Timeline";
+import { TimelineItem, TimelineItemDescription, TimelineItemSmallText } from "@/components/ui/timeline/TimelineItem";
+
+
+
+const vaccinationData = [
+    {
+        title: "BCG Vaccine",
+        date: "Birth",
+        description: "Patient received the BCG vaccine at birth to protect against tuberculosis.",
+    },
+    {
+        title: "Hepatitis B Vaccine 1st Dose",
+        date: "2 months",
+        description: "Patient received the first dose of the Hepatitis B vaccine.",
+    },
+    {
+        title: "Hepatitis B Vaccine 2nd Dose",
+        date: "6 months",
+        description: "Patient received the second dose of the Hepatitis B vaccine.",
+    },
+    {
+        title: "Hepatitis B Vaccine 3rd Dose",
+        date: "12 months",
+        description: "Patient received the third dose of the Hepatitis B vaccine.",
+    },
+    {
+        title: "Measles Vaccine 1st Dose",
+        date: "9 months",
+        description: "Patient received the first dose of the Measles vaccine.",
+    },
+    {
+        title: "Measles Vaccine 2nd Dose",
+        date: "15 months",
+        description: "Patient received the second dose of the Measles vaccine.",
+    },
+    {
+        title: "Diphtheria, Tetanus, and Pertussis (DTP) Vaccine 1st Dose",
+        date: "9 months",
+        description: "Patient received the first dose of the Diphtheria, Tetanus, and Pertussis (DTP) vaccine.",
+    },
+    {
+        title: "Diphtheria, Tetanus, and Pertussis (DTP) Vaccine 2nd Dose",
+        date: "15 months",
+        description: "Patient received the second dose of the Diphtheria, Tetanus, and Pertussis (DTP) vaccine.",
+    },
+    {
+        title: "Diphtheria, Tetanus, and Pertussis (DTP) Vaccine 3rd Dose",
+        date: "18 months",
+        description: "Patient received the third dose of the Diphtheria, Tetanus, and Pertussis (DTP) vaccine.",
+    },
+    {
+        title: "Human Papillomavirus (HPV) Vaccine 1st Dose",
+        date: "9 years",
+        description: "Patient received the first dose of the Human Papillomavirus (HPV) vaccine.",
+    },
+    {
+        title: "Human Papillomavirus (HPV) Vaccine 2nd Dose",
+        date: "12 years",
+        description: "Patient received the second dose of the Human Papillomavirus (HPV) vaccine.",
+    },
+    // Add more vaccination data as needed
+];
+
 
 export default function MoreOnVaccines() {
     return (
@@ -36,7 +101,7 @@ export default function MoreOnVaccines() {
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <Label htmlFor="name">Name</Label>
-                                <Input id="name" value="John Doe" readOnly />
+                                <Input id="name" value="Joan Waithera" readOnly />
                             </div>
                             <div>
                                 <Label htmlFor="dob">Date of Birth</Label>
@@ -80,7 +145,8 @@ export default function MoreOnVaccines() {
                     </CardHeader>
                     <CardContent className="flex flex-col items-center justify-center gap-4">
                         <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
-                            <img src="/placeholder.svg" width={200} height={200} alt="Vaccine QR Code" />
+                            <QRCodeGen />
+                            {/* <img src="/placeholder.svg" width={200} height={200} alt="Vaccine QR Code" /> */}
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
                             Scan this QR code to verify your vaccination record.
@@ -179,49 +245,28 @@ export default function MoreOnVaccines() {
                     </Link>
                 </div>
             </div>
-            {/* TIMELINE */}
+            {/* TEST TIMELINE 2.0 */}
             <div className="bg-white shadow-md rounded-md p-6">
                 <div className="mt-6">
-                    <h3 className="text-lg font-bold mb-2">Timeline</h3>
-                    <div>
-                        <div>
-                            <div>
-                                <h4 className="font-bold">Initial Consultation</h4>
-                                <p className="text-gray-500">March 1, 2024</p>
-                            </div>
-                            <div>
-                                <p>
-                                    Patient presented for initial prenatal consultation. Discussed medical history and established a
-                                    care plan.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h4 className="font-bold">Ultrasound Appointment</h4>
-                                <p className="text-gray-500">April 15, 2024</p>
-                            </div>
-                            <div>
-                                <p>Patient underwent a routine ultrasound appointment. Baby is developing normally.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h4 className="font-bold">Glucose Test</h4>
-                                <p className="text-gray-500">May 1, 2024</p>
-                            </div>
-                            <div>
-                                <p>Patient's glucose test results were within normal range.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-6 flex justify-end">
-                    <Button className="bg-primary text-white px-4 py-2 rounded-md">Update Case</Button>
-                    <Button className="bg-gray-500 px-4 py-2 rounded-md ml-4">Schedule Follow-up</Button>
+                    <h3 className="text-lg font-bold mb-2">Vaccination History</h3>
+                    <Timeline items={vaccinationData} activeItem={-1} bulletSize={16} lineSize={2}>
+                        {vaccinationData.map((vaccination, index) => (
+                            <TimelineItem
+                                key={index}
+                                title={
+                                    <>
+                                        {vaccination.title}
+                                        <TimelineItemSmallText>{vaccination.date}</TimelineItemSmallText>
+                                    </>
+                                }
+                            >
+                                <TimelineItemDescription>{vaccination.description}</TimelineItemDescription>
+                            </TimelineItem>
+                        ))}
+                    </Timeline>
                 </div>
             </div>
-            {/*  END OF TIMELINE */}
+            {/* *********** */}
         </div>
     )
 }

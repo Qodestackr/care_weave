@@ -81,6 +81,157 @@ model Symptom {
   updatedAt DateTime @updatedAt
 }
 
+model Triage {
+  id                    Int      @id @default(autoincrement())
+  patient               User     @relation(fields: [patientId], references: [id])
+  patientId             Int
+  height                Float
+  weight                Float
+  temperature           Float
+  systolicBloodPressure Int
+  heartRate             Int
+  oxygenSaturation      Int
+  respiratoryRate       Int
+  symptoms              String
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+////////////////////////////////////////
+model Allergy {
+  id         Int           @id @default(autoincrement())
+  patientId  Int
+  doctorId   Int
+  patient    User          @relation(fields: [patientId], references: [id])
+  doctor     DoctorProfile @relation(fields: [doctorId], references: [id])
+  details    String
+  createdAt  DateTime      @default(now())
+  Hospital   Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId Int?
+}
+
+model Prescription {
+  id           Int           @id @default(autoincrement())
+  patientId    Int
+  doctorId     Int
+  patient      User          @relation(fields: [patientId], references: [id])
+  doctor       DoctorProfile @relation(fields: [doctorId], references: [id])
+  medication   String
+  dosage       String
+  instructions String
+  createdAt    DateTime      @default(now())
+  Hospital     Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId   Int?
+}
+
+model ClinicalNote {
+  id         Int           @id @default(autoincrement())
+  patientId  Int
+  doctorId   Int
+  patient    User          @relation(fields: [patientId], references: [id])
+  doctor     DoctorProfile @relation(fields: [doctorId], references: [id])
+  note       String
+  createdAt  DateTime      @default(now())
+  Hospital   Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId Int?
+}
+
+///////////////////////
+model LabEntity {
+  id          Int          @id @default(autoincrement())
+  name        String
+  // address        String
+  // phone          String
+  email       String       @unique
+  // hashedPassword String
+  // availableLabTests => From Services ...
+  labRequests LabRequest[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+//////////////////////
+
+model LabRequest {
+  id          Int           @id @default(autoincrement())
+  patientId   Int
+  doctorId    Int
+  patient     User          @relation(fields: [patientId], references: [id])
+  doctor      DoctorProfile @relation(fields: [doctorId], references: [id])
+  details     String
+  createdAt   DateTime      @default(now())
+  Hospital    Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId  Int?
+  LabEntity   LabEntity?    @relation(fields: [labEntityId], references: [id])
+  labEntityId Int?
+}
+
+model ImagingRequest {
+  id         Int           @id @default(autoincrement())
+  patientId  Int
+  doctorId   Int
+  patient    User          @relation(fields: [patientId], references: [id])
+  doctor     DoctorProfile @relation(fields: [doctorId], references: [id])
+  details    String
+  createdAt  DateTime      @default(now())
+  Hospital   Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId Int?
+}
+
+model Referral {
+  id         Int           @id @default(autoincrement())
+  patientId  Int
+  doctorId   Int
+  patient    User          @relation(fields: [patientId], references: [id])
+  doctor     DoctorProfile @relation(fields: [doctorId], references: [id])
+  details    String
+  createdAt  DateTime      @default(now())
+  Hospital   Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId Int?
+}
+
+model MedicalRx {
+  id           Int           @id @default(autoincrement())
+  patientId    Int
+  doctorId     Int
+  patient      User          @relation(fields: [patientId], references: [id])
+  doctor       DoctorProfile @relation(fields: [doctorId], references: [id])
+  medication   String
+  dosage       String
+  instructions String
+  createdAt    DateTime      @default(now())
+  Hospital     Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId   Int?
+}
+
+model TreatmentPlan {
+  id         Int           @id @default(autoincrement())
+  patientId  Int
+  doctorId   Int
+  patient    User          @relation(fields: [patientId], references: [id])
+  doctor     DoctorProfile @relation(fields: [doctorId], references: [id])
+  plan       String
+  createdAt  DateTime      @default(now())
+  Hospital   Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId Int?
+}
+
+model FinalRx {
+  id           Int           @id @default(autoincrement())
+  patientId    Int
+  doctorId     Int
+  patient      User          @relation(fields: [patientId], references: [id])
+  doctor       DoctorProfile @relation(fields: [doctorId], references: [id])
+  medication   String
+  dosage       String
+  instructions String
+  createdAt    DateTime      @default(now())
+  Hospital     Hospital?     @relation(fields: [hospitalId], references: [id])
+  hospitalId   Int?
+}
+
+///////////////////////////////////////
+
 model Appointment {
   id                       Int       @id @default(autoincrement())
   appointmentDate          DateTime?
@@ -127,6 +278,17 @@ model User {
   hospitals       Hospital[]
   LabProfile      LabProfile[]
   PharmacyProfile PharmacyProfile[]
+  eTriage         Triage[]
+  Allergy         Allergy[]
+  Prescription    Prescription[]
+  ClinicalNote    ClinicalNote[]
+  LabRequest      LabRequest[]
+  ImagingRequest  ImagingRequest[]
+  Referral        Referral[]
+  MedicalRx       MedicalRx[]
+  TreatmentPlan   TreatmentPlan[]
+  FinalRx         FinalRx[]
+  // Vaccination     Vaccination[]
 }
 
 model Availability {
@@ -191,18 +353,28 @@ model DoctorProfile {
   // accomplishments          String?
   additionalDocs           String[]
   //////////////////////////////////////////////
-  operationMode            String      @default("Telehealth visit")
-  hourlyWage               Int         @default(100)
+  operationMode            String           @default("Telehealth visit")
+  hourlyWage               Int              @default(100)
   //////////////////////////////////////////////
   serviceId                Int?
-  service                  Service?    @relation(fields: [serviceId], references: [id])
+  service                  Service?         @relation(fields: [serviceId], references: [id])
   specialtyId              Int?
-  specialty                Speciality? @relation(fields: [specialtyId], references: [id])
+  specialty                Speciality?      @relation(fields: [specialtyId], references: [id])
   symptomIds               String[]
-  createdAt                DateTime    @default(now())
-  updatedAt                DateTime?   @updatedAt
+  createdAt                DateTime         @default(now())
+  updatedAt                DateTime?        @updatedAt
   shifts                   Shift[]
   hospitals                Hospital[]
+  Allergy                  Allergy[]
+  Prescription             Prescription[]
+  ClinicalNote             ClinicalNote[]
+  LabRequest               LabRequest[]
+  ImagingRequest           ImagingRequest[]
+  Referral                 Referral[]
+  MedicalRx                MedicalRx[]
+  TreatmentPlan            TreatmentPlan[]
+  FinalRx                  FinalRx[]
+  //   VaccineAppointments VaccineAppointment[]
 }
 
 model Shift {
@@ -251,11 +423,23 @@ model Hospital {
   shifts          Shift[]
   compliance      Compliance[]
   profileImage    String?
+
   ///////////////////////////////////////////////
   //TODO :: ADD BANK AND PAYMENT DETAILS LATER//
   /////////////////////////////////////////////
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
+
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  Allergy        Allergy[]
+  Prescription   Prescription[]
+  ClinicalNote   ClinicalNote[]
+  LabRequest     LabRequest[]
+  ImagingRequest ImagingRequest[]
+  Referral       Referral[]
+  MedicalRx      MedicalRx[]
+  TreatmentPlan  TreatmentPlan[]
+  FinalRx        FinalRx[]
+  // VaccineAppointments VaccineAppointment[]
 }
 
 ////////////////////////////////////////////////////////////
@@ -288,3 +472,45 @@ model PharmacyProfile {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// model Vaccination {
+//   id             Int      @id @default(autoincrement())
+//   patientId      Int
+//   patient        User     @relation(fields: [patientId], references: [id])
+//   vaccineName    String
+//   vaccineDate    DateTime
+//   doseNumber     Int
+//   status         String   // e.g., Scheduled, Completed, Overdue
+//   createdAt      DateTime @default(now())
+//   updatedAt      DateTime @updatedAt
+//   appointmentId  Int?
+//   appointment    Appointment? @relation(fields: [appointmentId], references: [id])
+// }
+
+// model VaccinationReminder {
+//   id             Int      @id @default(autoincrement())
+//   patientId      Int
+//   patient        User     @relation(fields: [patientId], references: [id])
+//   vaccineName    String
+//   reminderDate   DateTime
+//   status         String   // e.g., Sent, Pending
+//   createdAt      DateTime @default(now())
+//   updatedAt      DateTime @updatedAt
+// }
+
+// model VaccineAppointment {
+//   id               Int       @id @default(autoincrement())
+//   patientId        Int
+//   doctorId         Int
+//   hospitalId       Int?
+//   patient          User      @relation(fields: [patientId], references: [id])
+//   doctor           DoctorProfile @relation(fields: [doctorId], references: [id])
+//   hospital         Hospital? @relation(fields: [hospitalId], references: [id])
+//   appointmentDate  DateTime
+//   status           String    // e.g., Scheduled, Completed, Cancelled
+//   createdAt        DateTime  @default(now())
+//   updatedAt        DateTime  @updatedAt
+// }
+//////////////////////////////////////////////////////////////////////////////////////////////////

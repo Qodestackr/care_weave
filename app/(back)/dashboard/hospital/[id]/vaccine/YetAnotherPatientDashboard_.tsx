@@ -1,27 +1,16 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from "@/components/ui/dropdown-menu"
-import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { JSX, SVGProps } from "react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { JSX, SVGProps } from "react";
 
 export default function YetAnotherPatientDashboard_() {
   return (
     <div className="grid min-h-screen w-full overflow-hidden lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
         <div className="flex h-full max-h-screen flex-col gap-2">
-          <div className="flex h-[60px] items-center border-b px-6">
-            <Link href="#" className="flex items-center gap-2 font-semibold" prefetch={false}>
-              <HospitalIcon className="h-6 w-6" />
-              <span className="">Maternity Clinic</span>
-            </Link>
-            <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-              <BellIcon className="h-4 w-4" />
-              <span className="sr-only">Toggle notifications</span>
-            </Button>
-          </div>
           <div className="flex-1 overflow-auto py-2">
             <nav className="grid items-start px-4 text-sm font-medium">
               <Link
@@ -30,7 +19,7 @@ export default function YetAnotherPatientDashboard_() {
                 prefetch={false}
               >
                 <HomeIcon className="h-4 w-4" />
-                Dashboard
+                Maternity
               </Link>
               <Link
                 href="#"
@@ -69,14 +58,6 @@ export default function YetAnotherPatientDashboard_() {
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 prefetch={false}
               >
-                <MessageCircleIcon className="h-4 w-4" />
-                Messages
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                prefetch={false}
-              >
                 <BookOpenIcon className="h-4 w-4" />
                 Resources
               </Link>
@@ -102,26 +83,6 @@ export default function YetAnotherPatientDashboard_() {
               </div>
             </form>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
-              >
-                <img src="/placeholder.svg" width="32" height="32" className="rounded-full" alt="Avatar" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Dr. Jane Doe</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
           <div className="flex items-center gap-4">
@@ -236,77 +197,11 @@ export default function YetAnotherPatientDashboard_() {
               </CardContent>
             </Card>
           </div>
-          <div className="flex items-center gap-4">
-            <h1 className="font-semibold text-lg md:text-xl">Appointments</h1>
-            <Button size="sm" className="ml-auto">
-              <PlusIcon className="h-4 w-4 mr-2" />
-              Add Appointment
-            </Button>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <Card>
-              <CardContent className="grid gap-4">
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src="/placeholder-user.jpg" />
-                    <AvatarFallback>JD</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="text-sm font-medium leading-none">Juma Dada</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Patient ID: 123456</p>
-                  </div>
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Appointment Date</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">June 15, 2024</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Appointment Time</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">10:00 AM</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Appointment Type</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">Prenatal Checkup</span>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
-                    View Details
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Reschedule
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </main>
       </div>
     </div>
   )
 }
-
-function BellIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-    </svg>
-  )
-}
-
 
 function BookOpenIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
@@ -417,26 +312,6 @@ function HospitalIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) 
       <path d="M14 8h-4" />
       <path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" />
       <path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18" />
-    </svg>
-  )
-}
-
-
-function MessageCircleIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
     </svg>
   )
 }

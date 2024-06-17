@@ -1,10 +1,8 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { Share } from 'lucide-react';
 import { saveTriageData } from "@/actions/triage";
 import { Label } from "@/components/ui/label";
-import TextInput from "@/components/FormInputs/TextInput";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
@@ -13,12 +11,10 @@ import React from "react";
 
 export default function ETriage() {
 
-  const { register, handleSubmit, setValue, getValues, formState: { errors } } = useForm();
-  const [loading, setLoading] = React.useState(false);
-
   return (
     <div className="flex flex-col min-h-screen dark:bg-gray-900">
       <form
+        action={saveTriageData}
         // onSubmit={form.handleSubmit(onSubmit)}
         className="flex-1 container mx-auto py-8 px-4 md:px-6">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 md:p-8">
@@ -164,9 +160,11 @@ export default function ETriage() {
             </div>
           </div>
         </div>
+
         <div className="flex justify-end mt-8">
-          <SubmitButton title={"Update Triage"} isLoading={loading} loadingTitle={"Updating Triage..."} />
+          <Button type="submit">Save To Triage</Button>
         </div>
+
       </form>
     </div>
   )

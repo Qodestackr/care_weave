@@ -6,7 +6,7 @@ import { JSX, SVGProps } from "react"
 
 export default function HospitalActionCards() {
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-6">
             <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-6">
                 <Card className="flex flex-col items-start gap-2 rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
                     <Link href={'/dashboard/hospital/id/create-lab'}>

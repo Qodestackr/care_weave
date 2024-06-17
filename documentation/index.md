@@ -1,0 +1,1 @@
+This is a stash high level documentation about AfyaTelemed. I plan what to do here daily based on features. All kept randomly in folders.

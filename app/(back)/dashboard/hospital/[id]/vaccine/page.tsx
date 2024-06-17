@@ -10,6 +10,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { JSX, SVGProps } from "react";
 import MoreOnVaccines from "./MoreOnVaccines";
 import YetAnotherPatientDashboard_ from "./YetAnotherPatientDashboard_";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function ViewVaccinePatient() {
     return (
@@ -21,104 +23,12 @@ export default function ViewVaccinePatient() {
 
             <header className="flex items-center h-16 px-4 border-b shrink-0 md:px-6">
                 <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
-                    <Link href="#" className="font-bold text-sm" prefetch={false}>
+                    <Link href="#" className="font-light text-sm" prefetch={false}>
                         Hospital | Practitioner
                     </Link>
                 </nav>
             </header>
 
-            <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
-                <div className="max-w-6xl w-full mx-auto grid gap-2">
-                    <h1 className="font-semibold text-3xl">Practitioner Dashboard</h1>
-                </div>
-                <div className="grid gap-6 max-w-6xl w-full mx-auto">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Vaccine Inventory</CardTitle>
-                            <CardDescription>View current stock levels and expiration dates.</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead>Vaccine</TableHead>
-                                        <TableHead>Stock</TableHead>
-                                        <TableHead>Expiration</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    <TableRow>
-                                        <TableCell>Pfizer-BioNTech</TableCell>
-                                        <TableCell>1,500</TableCell>
-                                        <TableCell>2024-06-30</TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableCell>Moderna</TableCell>
-                                        <TableCell>800</TableCell>
-                                        <TableCell>2024-09-15</TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableCell>AstraZeneca</TableCell>
-                                        <TableCell>1,200</TableCell>
-                                        <TableCell>2024-12-31</TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableCell>Johnson & Johnson</TableCell>
-                                        <TableCell>600</TableCell>
-                                        <TableCell>2025-03-01</TableCell>
-                                    </TableRow>
-                                </TableBody>
-                            </Table>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Patient Vaccine History</CardTitle>
-                            <CardDescription>View a patient's vaccination record.</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="flex flex-col gap-4">
-                                <div className="flex items-center gap-4">
-                                    <Avatar>
-                                        <AvatarImage src="/placeholder-user.jpg" />
-                                        <AvatarFallback>JD</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <h3 className="font-semibold">Joan Wangari</h3>
-                                        <p className="text-gray-500 text-sm dark:text-gray-400">Patient ID: 12345</p>
-                                    </div>
-                                </div>
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow>
-                                            <TableHead>Vaccine</TableHead>
-                                            <TableHead>Date</TableHead>
-                                            <TableHead>Dose</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        <TableRow>
-                                            <TableCell>Pfizer-BioNTech</TableCell>
-                                            <TableCell>2023-04-15</TableCell>
-                                            <TableCell>1</TableCell>
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell>Pfizer-BioNTech</TableCell>
-                                            <TableCell>2023-05-06</TableCell>
-                                            <TableCell>2</TableCell>
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell>Johnson & Johnson</TableCell>
-                                            <TableCell>2023-11-20</TableCell>
-                                            <TableCell>1</TableCell>
-                                        </TableRow>
-                                    </TableBody>
-                                </Table>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
-            </main>
             <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
                 <div className="max-w-6xl w-full mx-auto grid gap-2">
                     <h1 className="font-light text-xl">Patient Dashboard</h1>
@@ -230,7 +140,84 @@ export default function ViewVaccinePatient() {
                             </Table>
                         </CardContent>
                     </Card>
+                    {/*  */}
                 </div>
+
+                {/*  */}
+
+                <section className="py-12 md:py-20 lg:py-24">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+                        <div className="max-w-2xl mx-auto">
+                            <h2 className="text-2xl md:text-3xl font-light mb-4">Tell Us About Your Child</h2>
+                            <form className="space-y-6">
+                                <div>
+                                    <Label htmlFor="child-name">Child's Name</Label>
+                                    <Input id="child-name" placeholder="Enter your child's name" />
+                                </div>
+                                <div>
+                                    <Label htmlFor="child-dob">Date of Birth</Label>
+                                    <Input id="child-dob" type="date" />
+                                </div>
+                                <div>
+                                    <Label htmlFor="child-info">Medical Information</Label>
+                                    <Textarea id="child-info" placeholder="Enter any relevant medical information" rows={4} />
+                                </div>
+                                <Button type="submit">Next</Button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                {/*  */}
+                <section className="bg-gray-100 dark:bg-gray-800 py-12 md:py-20 lg:py-24">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+                        <div className="max-w-2xl mx-auto">
+                            <h2 className="text-2xl md:text-3xl font-light mb-4">Confirm Your Appointment</h2>
+                            <Card>
+                                <CardContent>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <p className="text-gray-500 dark:text-gray-400">Child's Name</p>
+                                            <p className="font-medium">Joan Waithera</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-gray-500 dark:text-gray-400">Date of Birth</p>
+                                            <p className="font-medium">2018-05-15</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-gray-500 dark:text-gray-400">Vaccinations</p>
+                                            <p className="font-medium">MMR, DTaP, IPV</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-gray-500 dark:text-gray-400">Appointment Date</p>
+                                            <p className="font-medium">2023-06-20, 10:00 AM</p>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                            <div className="mt-6 flex justify-end gap-2">
+                                <Button variant="outline">Cancel</Button>
+                                <Button type="submit">Confirm Appointment</Button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {/*  */}
+                <section className="py-12 md:py-20 lg:py-24">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+                        <div className="max-w-2xl mx-auto">
+                            <h2 className="text-2xl md:text-3xl font-light mb-4">Your Appointment is Scheduled</h2>
+                            <div className="space-y-4">
+                                <p>Your child's vaccination appointment has been successfully scheduled for June 20, 2023 at 10:00 AM.</p>
+                                <p>We've added the appointment to your calendar. Please let us know if you need to make any changes.</p>
+                                <div className="flex justify-end">
+                                    <Button variant="outline">Add to Calendar</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {/*  */}
             </main>
             <MoreOnVaccines />
         </div>
@@ -261,31 +248,6 @@ function CalendarDaysIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElemen
             <path d="M8 18h.01" />
             <path d="M12 18h.01" />
             <path d="M16 18h.01" />
-        </svg>
-    )
-}
-
-
-function SyringeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="m18 2 4 4" />
-            <path d="m17 7 3-3" />
-            <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5" />
-            <path d="m9 11 4 4" />
-            <path d="m5 19-3 3" />
-            <path d="m14 4 6 6" />
         </svg>
     )
 }

@@ -7,6 +7,7 @@ export default function SelectYourHospital() {
     return (
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
                 <div>
                     <h2 className="font-light md:text-2xl text-xl mb-2">Select Your Hospital</h2>
                     <p className="text-[12px] mb-2">Based on your current location.</p>
