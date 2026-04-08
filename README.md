@@ -1,15 +1,15 @@
-# AfyaTelemed 🏥
+# CareWeave 🏥
 
 > A modern, open-source telehealth and healthcare appointment platform for connecting patients with healthcare providers.
 
-[![GitHub](https://img.shields.io/badge/GitHub-Open%20Source-blue)](https://github.com/Qodestackr/afyatelemed)
+[![GitHub](https://img.shields.io/badge/GitHub-Open%20Source-blue)](https://github.com/Qodestackr/CareWeave)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
 
 ## Overview
 
-AfyaTelemed is a comprehensive healthcare platform that enables seamless appointment booking, telehealth consultations, and in-person medical visits. Originally developed as a Kenyan healthcare solution, it's now available as an open-source project for the global community.
+CareWeave is a comprehensive healthcare platform that enables seamless appointment booking, telehealth consultations, and in-person medical visits. Originally developed as a Kenyan healthcare solution, it's now available as an open-source project for the global community.
 
 The platform bridges the gap between patients seeking medical care and healthcare providers, offering a user-friendly interface for managing appointments, doctor profiles, consultations, and healthcare services.
 
@@ -86,8 +86,8 @@ The platform bridges the gap between patients seeking medical care and healthcar
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Qodestackr/afyatelemed.git
-   cd afyatelemed
+   git clone https://github.com/Qodestackr/CareWeave.git
+   cd CareWeave
    ```
 
 2. **Install dependencies**
@@ -224,7 +224,7 @@ We welcome contributions from the community! To contribute:
 
 ## 🐛 Bug Reports & Feature Requests
 
-Found a bug or have a feature idea? [Open an issue](https://github.com/Qodestackr/afyatelemed/issues) with:
+Found a bug or have a feature idea? [Open an issue](https://github.com/Qodestackr/CareWeave/issues) with:
 - Clear description of the problem/suggestion
 - Steps to reproduce (for bugs)
 - Expected vs. actual behavior
@@ -236,9 +236,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- **Live Demo**: [https://afyatelemed.vercel.app](https://afyatelemed.vercel.app)
-- **Repository**: [https://github.com/Qodestackr/afyatelemed](https://github.com/Qodestackr/afyatelemed)
-- **Issues**: [https://github.com/Qodestackr/afyatelemed/issues](https://github.com/Qodestackr/afyatelemed/issues)
+- **Live Demo**: [https://CareWeave.vercel.app](https://CareWeave.vercel.app)
+- **Repository**: [https://github.com/Qodestackr/CareWeave](https://github.com/Qodestackr/CareWeave)
+- **Issues**: [https://github.com/Qodestackr/CareWeave/issues](https://github.com/Qodestackr/CareWeave/issues)
 
 ## 📞 Support
 
