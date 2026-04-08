@@ -15,13 +15,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig: FirebaseOptions = {
-  apiKey: "AIzaSyA_6B3-LBl2dR_QO_S29aY1z8Dzl8iLAfg",
+  apiKey: ",
   authDomain: "afyamed-tele.firebaseapp.com",
   projectId: "afyamed-tele",
   storageBucket: "afyamed-tele.appspot.com",
-  messagingSenderId: "886411287340",
-  appId: "1:886411287340:web:85f02b74d073df6aa22a89",
-  measurementId: "G-J91G4NL0CH",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
 };
 
 // Initialize Firebase
