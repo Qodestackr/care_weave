@@ -1,6 +1,3 @@
-// https://blog.arcjet.com/testing-next-js-app-router-api-routes/
-// https://medium.com/@zachshallbetter/unit-test-next-js-api-routes-with-typescript-longer-version-a59ceb261b1f
-
 export const API_ENDPOINTS = {
   ALLERGIES: `/api/allergies`,
   APPOINTMENTS: `/api/appointments`,
