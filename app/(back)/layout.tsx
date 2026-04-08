@@ -1,7 +1,3 @@
-// import { usePathname } from 'next/navigation';
-// 'use client';
-// GO FIX SELF:: https://github.com/vercel/next.js/issues/49757
-
 import DashboardHeader from "@/imported/components/layout/header";
 import Sidebar from "@/imported/components/layout/sidebar";
 import type { Metadata } from "next";
